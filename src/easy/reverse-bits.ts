@@ -1,0 +1,182 @@
+import assertTest from "../assert-test"
+
+/**
+ * Reverse Bits (#190)
+ *
+ * Reverse bits of a given 32 bits unsigned integer.
+ * Note: In some languages, such as Java, there is no unsigned integer type.
+ * In this case, both input and output will be given as a signed integer type.
+ * They should not affect your implementation, as the integer's internal binary representation is the same,
+ * whether it is signed or unsigned.
+ *
+ * Time Complexity: O(1) - always 32 bits
+ * Space Complexity: O(1)
+ */
+function reverseBits(n: number): number {
+  // TODO: Implement the solution
+  return 0
+}
+
+// Test cases
+assertTest(
+  reverseBits(0b00000010100101000001111010011100),
+  0b00111001011110000010100101000000,
+  "Example 1",
+)
+assertTest(
+  reverseBits(0b11111111111111111111111111111101),
+  0b10111111111111111111111111111111,
+  "Example 2",
+)
+assertTest(reverseBits(0), 0, "All zeros")
+assertTest(
+  reverseBits(0b11111111111111111111111111111111),
+  0b11111111111111111111111111111111,
+  "All ones",
+)
+assertTest(
+  reverseBits(1),
+  0b10000000000000000000000000000000,
+  "Single bit at end",
+)
+assertTest(
+  reverseBits(0b10000000000000000000000000000000),
+  1,
+  "Single bit at start",
+)
+assertTest(
+  reverseBits(0b00000000000000000000000000000001),
+  0b10000000000000000000000000000000,
+  "Least significant bit",
+)
+assertTest(
+  reverseBits(0b10000000000000000000000000000001),
+  0b10000000000000000000000000000001,
+  "Both ends",
+)
+assertTest(
+  reverseBits(0b01010101010101010101010101010101),
+  0b10101010101010101010101010101010,
+  "Alternating pattern",
+)
+assertTest(
+  reverseBits(0b10101010101010101010101010101010),
+  0b01010101010101010101010101010101,
+  "Reverse alternating",
+)
+assertTest(
+  reverseBits(0b11110000111100001111000011110000),
+  0b00001111000011110000111100001111,
+  "Block pattern",
+)
+assertTest(
+  reverseBits(0b00001111000011110000111100001111),
+  0b11110000111100001111000011110000,
+  "Reverse block",
+)
+assertTest(
+  reverseBits(0b11000000000000000000000000000011),
+  0b11000000000000000000000000000011,
+  "Symmetric",
+)
+assertTest(
+  reverseBits(0b00000000000000001111111111111111),
+  0b11111111111111110000000000000000,
+  "Half and half",
+)
+assertTest(
+  reverseBits(0b11111111111111110000000000000000),
+  0b00000000000000001111111111111111,
+  "Reverse half",
+)
+assertTest(
+  reverseBits(0b00000001000000010000000100000001),
+  0b10000000100000001000000010000000,
+  "Sparse bits",
+)
+assertTest(
+  reverseBits(0b10000000100000001000000010000000),
+  0b00000001000000010000000100000001,
+  "Reverse sparse",
+)
+assertTest(
+  reverseBits(0b11111110111111101111111011111110),
+  0b01111111011111110111111101111111,
+  "Dense pattern",
+)
+assertTest(
+  reverseBits(0b01111111011111110111111101111111),
+  0b11111110111111101111111011111110,
+  "Reverse dense",
+)
+assertTest(
+  reverseBits(0b00000000000000000000000011111111),
+  0b11111111000000000000000000000000,
+  "Last byte",
+)
+assertTest(
+  reverseBits(0b11111111000000000000000000000000),
+  0b00000000000000000000000011111111,
+  "First byte",
+)
+assertTest(
+  reverseBits(0b00000000111111110000000000000000),
+  0b00000000000000001111111100000000,
+  "Middle bytes",
+)
+assertTest(
+  reverseBits(0b10101010000000001010101000000000),
+  0b00000000010101010000000001010101,
+  "Complex pattern 1",
+)
+assertTest(
+  reverseBits(0b01010101111111110101010111111111),
+  0b11111111010101011111111101010101,
+  "Complex pattern 2",
+)
+assertTest(
+  reverseBits(0b11001100110011001100110011001100),
+  0b00110011001100110011001100110011,
+  "Repeating nibbles",
+)
+assertTest(
+  reverseBits(0b00110011001100110011001100110011),
+  0b11001100110011001100110011001100,
+  "Reverse nibbles",
+)
+assertTest(
+  reverseBits(0b11110000111100001111000011110000),
+  0b00001111000011110000111100001111,
+  "Nibble blocks",
+)
+assertTest(
+  reverseBits(0b00011000001100000110000001100000),
+  0b00000110000001100000011000000110,
+  "Scattered pattern",
+)
+assertTest(
+  reverseBits(0b11100000000000000000000000000111),
+  0b11100000000000000000000000000111,
+  "Edge symmetric",
+)
+assertTest(
+  reverseBits(0b10000001100000011000000110000001),
+  0b10000001100000011000000110000001,
+  "Complex symmetric",
+)
+assertTest(
+  reverseBits(0b01111110011111100111111001111110),
+  0b01111110011111100111111001111110,
+  "Pattern symmetric",
+)
+assertTest(
+  reverseBits(0b00000000000000001111111111111111),
+  0b11111111111111110000000000000000,
+  "Clear half split",
+)
+assertTest(
+  reverseBits(42),
+  0b01010100000000000000000000000000,
+  "Answer to everything",
+)
+
