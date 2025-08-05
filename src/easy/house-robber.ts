@@ -18,13 +18,19 @@ import assertTest from "../assert-test"
 function rob(nums: number[]): number {
   // TODO: Implement the solution using dynamic programming
 
-  function bestOfHousesUpTo(i: number): number {
-    if (i < 0) return 0
+  if (nums.length === 0) return 0
+  if (nums.length === 1) return nums[0]
 
-    return Math.max(bestOfHousesUpTo(i - 1), bestOfHousesUpTo(i - 2) + nums[i])
+  let prev = nums[0]
+  let prev2 = Math.max(nums[1], nums[0])
+
+  for (let i = 2; i < nums.length; i++) {
+    let curr = Math.max(prev, prev2 + nums[i])
+    prev2 = prev
+    prev = curr
   }
 
-  return bestOfHousesUpTo(nums.length - 1)
+  return prev
 }
 
 // Test cases
@@ -61,3 +67,4 @@ assertTest(rob([2, 4, 6, 8, 10]), 18, "Even numbers")
 assertTest(rob([11, 13, 17, 19, 23]), 51, "Prime numbers")
 assertTest(rob([100, 99, 98, 97, 96]), 294, "Large consecutive numbers")
 assertTest(rob([1, 50, 1, 50, 1]), 100, "Alternating high-low")
+
