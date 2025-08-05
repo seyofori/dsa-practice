@@ -23,11 +23,31 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 
 #### **Key Problems to Master:**
 
-- [ ] Two Sum, Contains Duplicate, Valid Anagram
-- [ ] Binary Search, Best Time to Buy/Sell Stock
-- [ ] Tree basics: Invert Binary Tree, Maximum Depth
-- [ ] Array fundamentals: Move Zeroes, Missing Number
-- [ ] String problems: Valid Palindrome, First Unique Character
+**Hash Maps & Sets:**
+
+- [ ] Two Sum
+- [ ] Contains Duplicate
+- [ ] Valid Anagram
+
+**Binary Search:**
+
+- [ ] Binary Search
+- [ ] Best Time to Buy/Sell Stock
+
+**Tree Basics:**
+
+- [ ] Invert Binary Tree
+- [ ] Maximum Depth of Binary Tree
+
+**Array Fundamentals:**
+
+- [ ] Move Zeroes
+- [ ] Missing Number
+
+**String Problems:**
+
+- [ ] Valid Palindrome
+- [ ] First Unique Character
 
 #### **Week 1 Goals:**
 
@@ -48,12 +68,32 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 
 #### **Priority Problems:**
 
-- [ ] 3Sum, Container with Most Water
+**Two Pointers & Arrays:**
+
+- [ ] 3Sum
+- [ ] Container with Most Water
+
+**Sliding Window:**
+
 - [ ] Longest Substring Without Repeating Characters
-- [ ] Product of Array Except Self, Merge Intervals
-- [ ] Generate Parentheses (backtracking intro)
-- [ ] Course Schedule (graph algorithms)
-- [ ] Rotate Matrix, Search in Rotated Sorted Array
+
+**Array Manipulation:**
+
+- [ ] Product of Array Except Self
+- [ ] Merge Intervals
+- [ ] Rotate Matrix
+
+**Backtracking Introduction:**
+
+- [ ] Generate Parentheses
+
+**Graph Algorithms:**
+
+- [ ] Course Schedule
+
+**Binary Search:**
+
+- [ ] Search in Rotated Sorted Array
 
 #### **Week 2 Goals:**
 
@@ -75,12 +115,32 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 
 #### **Key Problems:**
 
-- [ ] N-Queens (comprehensive backtracking)
-- [ ] Coin Change (dynamic programming)
+**Comprehensive Backtracking:**
+
+- [ ] N-Queens
+- [ ] Word Search
+- [ ] Permutations
+
+**Dynamic Programming:**
+
+- [ ] Coin Change
 - [ ] Longest Increasing Subsequence
-- [ ] Word Search, Permutations (advanced backtracking)
-- [ ] Implement Trie, Find Peak Element
-- [ ] Kth Largest Element, Game of Life
+
+**Tree Algorithms:**
+
+- [ ] Implement Trie
+
+**Binary Search:**
+
+- [ ] Find Peak Element
+
+**Complex Optimization:**
+
+- [ ] Kth Largest Element
+
+**Logic/Simulation:**
+
+- [ ] Game of Life
 
 #### **Week 3 Goals:**
 
