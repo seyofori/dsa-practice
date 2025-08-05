@@ -1,0 +1,296 @@
+import assertTest from "../assert-test"
+
+/**
+ * Kth Largest Element in an Array (#215)
+ *
+ * Given an integer array nums and an integer k, return the kth largest element in the array.
+ * Note that it is the kth largest element in the sorted order, not the kth distinct element.
+ * Can you solve it without sorting?
+ *
+ * Example 1:
+ * Input: nums = [3,2,1,5,6,4], k = 2
+ * Output: 5
+ *
+ * Example 2:
+ * Input: nums = [3,2,3,1,2,4,5,5,6], k = 4
+ * Output: 4
+ *
+ * Time Complexity: O(n) average case using quickselect, O(n log n) worst case
+ * Space Complexity: O(1) for iterative quickselect
+ */
+function findKthLargest(nums: number[], k: number): number {
+  // TODO: Implement using quickselect algorithm or min/max heap
+  // Hint: Use quickselect (similar to quicksort) to find kth largest element
+  // Alternative: Use a min heap of size k
+  return 0
+}
+
+// Test cases
+assertTest(
+  findKthLargest([3, 2, 1, 5, 6, 4], 2),
+  5,
+  "Example 1 - 2nd largest is 5",
+)
+assertTest(
+  findKthLargest([3, 2, 3, 1, 2, 4, 5, 5, 6], 4),
+  4,
+  "Example 2 - 4th largest is 4",
+)
+
+// Single element
+assertTest(findKthLargest([1], 1), 1, "Single element - 1st largest")
+
+// Two elements
+assertTest(findKthLargest([1, 2], 1), 2, "Two elements - 1st largest")
+assertTest(findKthLargest([1, 2], 2), 1, "Two elements - 2nd largest")
+assertTest(findKthLargest([2, 1], 1), 2, "Two elements reversed - 1st largest")
+
+// All same elements
+assertTest(findKthLargest([5, 5, 5, 5], 1), 5, "All same - 1st largest")
+assertTest(findKthLargest([5, 5, 5, 5], 3), 5, "All same - 3rd largest")
+assertTest(findKthLargest([5, 5, 5, 5], 4), 5, "All same - 4th largest")
+
+// Sorted arrays
+assertTest(
+  findKthLargest([1, 2, 3, 4, 5], 1),
+  5,
+  "Sorted ascending - 1st largest",
+)
+assertTest(
+  findKthLargest([1, 2, 3, 4, 5], 3),
+  3,
+  "Sorted ascending - 3rd largest",
+)
+assertTest(
+  findKthLargest([1, 2, 3, 4, 5], 5),
+  1,
+  "Sorted ascending - 5th largest",
+)
+
+assertTest(
+  findKthLargest([5, 4, 3, 2, 1], 1),
+  5,
+  "Sorted descending - 1st largest",
+)
+assertTest(
+  findKthLargest([5, 4, 3, 2, 1], 3),
+  3,
+  "Sorted descending - 3rd largest",
+)
+assertTest(
+  findKthLargest([5, 4, 3, 2, 1], 5),
+  1,
+  "Sorted descending - 5th largest",
+)
+
+// With duplicates
+assertTest(
+  findKthLargest([1, 1, 1, 2, 2, 3], 1),
+  3,
+  "With duplicates - 1st largest",
+)
+assertTest(
+  findKthLargest([1, 1, 1, 2, 2, 3], 2),
+  2,
+  "With duplicates - 2nd largest",
+)
+assertTest(
+  findKthLargest([1, 1, 1, 2, 2, 3], 3),
+  2,
+  "With duplicates - 3rd largest",
+)
+assertTest(
+  findKthLargest([1, 1, 1, 2, 2, 3], 4),
+  1,
+  "With duplicates - 4th largest",
+)
+
+// Negative numbers
+assertTest(findKthLargest([-1, -3, -2], 1), -1, "All negative - 1st largest")
+assertTest(findKthLargest([-1, -3, -2], 2), -2, "All negative - 2nd largest")
+assertTest(findKthLargest([-1, -3, -2], 3), -3, "All negative - 3rd largest")
+
+// Mixed positive and negative
+assertTest(findKthLargest([-1, 2, 0], 1), 2, "Mixed signs - 1st largest")
+assertTest(findKthLargest([-1, 2, 0], 2), 0, "Mixed signs - 2nd largest")
+assertTest(findKthLargest([-1, 2, 0], 3), -1, "Mixed signs - 3rd largest")
+
+// Large numbers
+assertTest(
+  findKthLargest([1000, 999, 1001, 998], 1),
+  1001,
+  "Large numbers - 1st largest",
+)
+assertTest(
+  findKthLargest([1000, 999, 1001, 998], 2),
+  1000,
+  "Large numbers - 2nd largest",
+)
+
+// Random order
+assertTest(
+  findKthLargest([7, 10, 4, 3, 20, 15], 1),
+  20,
+  "Random order - 1st largest",
+)
+assertTest(
+  findKthLargest([7, 10, 4, 3, 20, 15], 2),
+  15,
+  "Random order - 2nd largest",
+)
+assertTest(
+  findKthLargest([7, 10, 4, 3, 20, 15], 3),
+  10,
+  "Random order - 3rd largest",
+)
+assertTest(
+  findKthLargest([7, 10, 4, 3, 20, 15], 6),
+  3,
+  "Random order - 6th largest",
+)
+
+// Edge cases with k
+assertTest(
+  findKthLargest([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 1),
+  10,
+  "k=1 in longer array",
+)
+assertTest(
+  findKthLargest([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10),
+  1,
+  "k=n in longer array",
+)
+assertTest(
+  findKthLargest([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5),
+  6,
+  "k in middle of longer array",
+)
+
+// Multiple duplicates
+assertTest(
+  findKthLargest([2, 1, 1, 1, 3, 3, 3, 3, 3], 1),
+  3,
+  "Multiple duplicates - 1st",
+)
+assertTest(
+  findKthLargest([2, 1, 1, 1, 3, 3, 3, 3, 3], 5),
+  3,
+  "Multiple duplicates - 5th",
+)
+assertTest(
+  findKthLargest([2, 1, 1, 1, 3, 3, 3, 3, 3], 6),
+  2,
+  "Multiple duplicates - 6th",
+)
+
+// Zero included
+assertTest(findKthLargest([0, 1, 2, 3], 1), 3, "With zero - 1st largest")
+assertTest(findKthLargest([0, 1, 2, 3], 4), 0, "With zero - 4th largest")
+assertTest(findKthLargest([0, 0, 0], 1), 0, "All zeros - 1st largest")
+
+// Complex patterns
+assertTest(
+  findKthLargest([3, 2, 1, 5, 6, 4], 1),
+  6,
+  "Original example modified - 1st largest",
+)
+assertTest(
+  findKthLargest([3, 2, 1, 5, 6, 4], 3),
+  4,
+  "Original example modified - 3rd largest",
+)
+assertTest(
+  findKthLargest([3, 2, 1, 5, 6, 4], 6),
+  1,
+  "Original example modified - 6th largest",
+)
+
+// Fibonacci-like sequence
+assertTest(
+  findKthLargest([1, 1, 2, 3, 5, 8], 1),
+  8,
+  "Fibonacci-like - 1st largest",
+)
+assertTest(
+  findKthLargest([1, 1, 2, 3, 5, 8], 2),
+  5,
+  "Fibonacci-like - 2nd largest",
+)
+assertTest(
+  findKthLargest([1, 1, 2, 3, 5, 8], 6),
+  1,
+  "Fibonacci-like - 6th largest",
+)
+
+// Powers of 2
+assertTest(findKthLargest([1, 2, 4, 8, 16], 1), 16, "Powers of 2 - 1st largest")
+assertTest(findKthLargest([1, 2, 4, 8, 16], 3), 4, "Powers of 2 - 3rd largest")
+
+// Reverse powers of 2
+assertTest(
+  findKthLargest([16, 8, 4, 2, 1], 1),
+  16,
+  "Reverse powers of 2 - 1st largest",
+)
+assertTest(
+  findKthLargest([16, 8, 4, 2, 1], 3),
+  4,
+  "Reverse powers of 2 - 3rd largest",
+)
+
+// Large array test
+const largeArray = Array.from({ length: 100 }, (_, i) => i + 1)
+assertTest(findKthLargest(largeArray, 1), 100, "Large array - 1st largest")
+assertTest(findKthLargest(largeArray, 50), 51, "Large array - 50th largest")
+assertTest(findKthLargest(largeArray, 100), 1, "Large array - 100th largest")
+
+// Shuffled large array
+const shuffledArray = [50, 25, 75, 12, 87, 6, 94, 31, 68, 43]
+assertTest(findKthLargest(shuffledArray, 1), 94, "Shuffled array - 1st largest")
+assertTest(findKthLargest(shuffledArray, 5), 43, "Shuffled array - 5th largest")
+assertTest(
+  findKthLargest(shuffledArray, 10),
+  6,
+  "Shuffled array - 10th largest",
+)
+
+// Array with extreme values
+assertTest(
+  findKthLargest([Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER, 0], 1),
+  Number.MAX_SAFE_INTEGER,
+  "Extreme values - 1st largest",
+)
+assertTest(
+  findKthLargest([Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER, 0], 2),
+  0,
+  "Extreme values - 2nd largest",
+)
+assertTest(
+  findKthLargest([Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER, 0], 3),
+  Number.MIN_SAFE_INTEGER,
+  "Extreme values - 3rd largest",
+)
+
+// Test with many duplicates of the kth largest
+assertTest(
+  findKthLargest([4, 5, 5, 6, 6, 6], 3),
+  6,
+  "Kth largest with multiple occurrences",
+)
+assertTest(
+  findKthLargest([4, 5, 5, 6, 6, 6], 4),
+  5,
+  "After multiple occurrences of previous",
+)
+
+// Stress test patterns
+assertTest(findKthLargest([9, 3, 2, 4, 8], 3), 4, "Stress test 1")
+assertTest(findKthLargest([1, 23, 12, 9, 30, 2, 50], 2), 30, "Stress test 2")
+assertTest(
+  findKthLargest([7, 14, 21, 28, 35], 3),
+  21,
+  "Multiples of 7 - 3rd largest",
+)
+
+console.log("All Kth Largest Element tests completed!")
+

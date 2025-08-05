@@ -26,7 +26,21 @@ function isBadVersion(version: number): boolean {
 
 function firstBadVersion(n: number): number {
   // TODO: Implement the solution
-  return 0
+  // we'll use a binary search implementation, to match the desired time complexity
+  let start = 1
+  let end = n
+
+  while (start < end) {
+    let center = Math.floor((start + end) / 2)
+    if (isBadVersion(center)) {
+      end = center
+    } else {
+      start = center + 1
+    }
+  }
+
+  // apparently start and end will be the same value at loop exit
+  return end
 }
 
 // Test cases
