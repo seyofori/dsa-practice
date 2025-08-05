@@ -23,30 +23,7 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1) - constant space for character frequency (26 letters)
  */
 function isAnagram(s: string, t: string): boolean {
-  // TODO: Implement the solution
-  if (s.length !== t.length) return false
-
-  const letters = new Map<string, number>()
-
-  // count up
-  for (let letter of s) {
-    const currentCount = letters.get(letter) || 0
-    letters.set(letter, currentCount + 1)
-  }
-
-  // countdown
-  for (let letter of t) {
-    if (!letters.has(letter)) return false
-
-    const currentCount = letters.get(letter)!
-    if (currentCount === 1) {
-      letters.delete(letter)
-    } else {
-      letters.set(letter, currentCount - 1)
-    }
-  }
-
-  return letters.size === 0
+return false
 }
 
 // Test cases - covering comprehensive edge cases
@@ -142,3 +119,32 @@ assertTest(
 )
 assertTest(isAnagram("anagramm", "nagaram"), false, "Extra character at end")
 
+/**
+ * function isAnagram(s: string, t: string): boolean {
+  // TODO: Implement the solution
+  if (s.length !== t.length) return false
+
+  const letters = new Map<string, number>()
+
+  // count up
+  for (let letter of s) {
+    const currentCount = letters.get(letter) || 0
+    letters.set(letter, currentCount + 1)
+  }
+
+  // countdown
+  for (let letter of t) {
+    if (!letters.has(letter)) return false
+
+    const currentCount = letters.get(letter)!
+    if (currentCount === 1) {
+      letters.delete(letter)
+    } else {
+      letters.set(letter, currentCount - 1)
+    }
+  }
+
+  return letters.size === 0
+}
+
+ */

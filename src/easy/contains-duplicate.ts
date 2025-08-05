@@ -11,6 +11,12 @@ import assertTest from "../assert-test"
  */
 function containsDuplicate(nums: number[]): boolean {
   // TODO: Implement the solution
+  const seen = new Set<number>()
+
+  for (let num of nums) {
+    if (seen.has(num)) return true;
+    seen.add(num);
+  }
   return false
 }
 
@@ -120,3 +126,18 @@ assertTest(
   "Powers of 10 - with duplicate",
 )
 
+
+/**
+ * SOLUTION
+ * 
+ * function containsDuplicate(nums: number[]): boolean {
+  const seen = new Set<number>()
+
+  for (let num of nums) {
+    if (seen.has(num)) return true;
+    seen.add(num);
+  }
+  return false
+}
+
+ */
