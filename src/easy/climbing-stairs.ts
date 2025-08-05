@@ -10,14 +10,16 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1) with optimized approach
  */
 function climbStairs(n: number): number {
-  // the key to implementing this dynamic programming problem is recognising that
-  // the number of possible steps that could be taken to get to the final stair case
-  // is (n - 1) + (n - 2), which is the same as the fibbonacci sequence
+  // TODO: Implement the solution
+  // key to this is recognizing that, to get to the final step, 
+  // you could've either taken 1 step, or two steps
+  // so number of steps that you could've taken to the final step n = (n-1) + (n-2)
+  // that's the fibbonacci sequence
+  // so now we can take advantage of what we know about fibbonacci to solve this
   
-  // so this problem can be expressed in the form of subproblems, 
-  // based on the fibbonacci sequence
-  if (n === 1) return 1
-  if(n === 2) return 2
+  if (n === 1) return 1;
+  if (n === 2) return 2;
+
   return climbStairs(n - 1) + climbStairs(n - 2);
 }
 

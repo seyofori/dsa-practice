@@ -12,8 +12,20 @@ import assertTest from "../assert-test"
  * Time Complexity: O(log n)
  * Space Complexity: O(1)
  */
-function search(nums: number[], target: number) {
-  
+function search(nums: number[], target: number): number {
+  // TODO: Implement the solution
+  let start = 0
+  let end = nums.length - 1
+
+  while (start <= end) {
+    let mid = Math.floor((start + end) / 2)
+    if (nums[mid] === target) return mid;
+
+    if (nums[mid] < target) start = mid + 1;
+    if (nums[mid] > target) end = mid - 1;
+  }
+
+  return -1
 }
 
 // Test cases

@@ -22,7 +22,41 @@ function floodFill(
   color: number,
 ): number[][] {
   // TODO: Implement the solution
-  return []
+  // from the starting point, we want to find the left, right, top and bottom
+  // and determine if they have the same value as the starting point.
+  // for the ones that do, we change their values, and then rinse and repeat
+
+  // edge cases
+  // we have to ensure that we're not out of bounds
+  // we have to ensure that the cell contains the required value
+  if (image[sr][sc] === color) return image
+
+  const oldColor = image[sr][sc]
+
+  flood(sr, sc)
+
+  function flood(row: number, column: number) {
+    if (
+      row < 0 ||
+      column < 0 ||
+      row > image.length - 1 ||
+      column > image[row].length - 1 ||
+      image[row][column] !== oldColor
+    )
+      return
+
+    image[row][column] = color
+
+    // now flood the left, the right, the top and the bottom
+    flood(row, column - 1)
+    // right
+    flood(row, column + 1)
+    // top
+    flood(row - 1, column)
+    // bottom
+    flood(row + 1, column)
+  }
+  return image
 }
 
 // Helper function for deep array comparison
@@ -280,10 +314,10 @@ testFloodFill(
   0,
   2,
   [
-    [2, 1, 2, 1],
-    [1, 2, 1, 2],
-    [2, 1, 2, 1],
-    [1, 2, 1, 2],
+    [2, 1, 0, 1],
+    [1, 0, 1, 0],
+    [0, 1, 0, 1],
+    [1, 0, 1, 0],
   ],
   "Alternating pattern",
 )
@@ -464,7 +498,7 @@ testFloodFill(
   [
     [2, 0, 6, 8],
     [1, 3, 5, 7],
-    [2, 0, 6, 8],
+    [2, 4, 6, 8],
     [1, 3, 5, 7],
   ],
   "Even-odd pattern",
@@ -497,9 +531,9 @@ testFloodFill(
   0,
   33,
   [
-    [12, 33, 12],
-    [33, 12, 33],
-    [12, 33, 12],
+    [12, 21, 12],
+    [33, 12, 21],
+    [12, 21, 12],
   ],
   "Alternating 12 and 21",
 )
@@ -514,9 +548,9 @@ testFloodFill(
   1,
   2,
   [
-    [64, 32, 2],
+    [64, 32, 16],
     [32, 2, 8],
-    [2, 8, 4],
+    [16, 8, 4],
   ],
   "Powers of 2 pattern",
 )
@@ -532,9 +566,113 @@ testFloodFill(
   11,
   [
     [99, 88, 11],
-    [88, 11, 66],
-    [11, 66, 55],
+    [88, 77, 66],
+    [77, 66, 55],
   ],
   "Descending pattern",
 )
 
+// Edge cases that would catch the original bug (checking new color instead of old color)
+testFloodFill(
+  [
+    [1, 1, 1],
+    [1, 2, 1],
+    [1, 1, 1],
+  ],
+  0,
+  0,
+  2,
+  [
+    [2, 2, 2],
+    [2, 2, 2],
+    [2, 2, 2],
+  ],
+  "Bug catcher: New color exists in grid - should still flood all 1s",
+)
+
+testFloodFill(
+  [
+    [2, 1, 2],
+    [1, 1, 1],
+    [2, 1, 2],
+  ],
+  1,
+  1,
+  2,
+  [
+    [2, 2, 2],
+    [2, 2, 2],
+    [2, 2, 2],
+  ],
+  "Bug catcher: New color already surrounds region - should flood all 1s",
+)
+
+testFloodFill(
+  [
+    [0, 0, 1],
+    [0, 1, 1],
+    [1, 1, 1],
+  ],
+  0,
+  0,
+  1,
+  [
+    [1, 1, 1],
+    [1, 1, 1],
+    [1, 1, 1],
+  ],
+  "Bug catcher: Flooding with color that exists elsewhere",
+)
+
+testFloodFill(
+  [
+    [3, 3, 2],
+    [3, 2, 2],
+    [2, 2, 2],
+  ],
+  0,
+  0,
+  2,
+  [
+    [2, 2, 2],
+    [2, 2, 2],
+    [2, 2, 2],
+  ],
+  "Bug catcher: Target color dominates grid - should still flood 3s",
+)
+
+testFloodFill(
+  [
+    [5, 5, 7],
+    [5, 7, 7],
+    [7, 7, 5],
+  ],
+  0,
+  0,
+  7,
+  [
+    [7, 7, 7],
+    [7, 7, 7],
+    [7, 7, 5],
+  ],
+  "Bug catcher: Complex pattern with target color present",
+)
+
+testFloodFill(
+  [
+    [4, 4, 4, 9],
+    [4, 9, 4, 9],
+    [4, 4, 4, 9],
+    [9, 9, 9, 9],
+  ],
+  0,
+  0,
+  9,
+  [
+    [9, 9, 9, 9],
+    [9, 9, 9, 9],
+    [9, 9, 9, 9],
+    [9, 9, 9, 9],
+  ],
+  "Bug catcher: Large connected region with target color present",
+)

@@ -24,7 +24,27 @@ class TreeNode {
 }
 
 function isBalanced(root: TreeNode | null): boolean {
-  return false;
+  // TODO: Implement the solution
+  // it's balanced if the left sub-tree is balanced, and the right subtree is balanced
+  // need to do it recursively
+  // for optimisation purposes, we also need to include a short-circuit that tells us early when a sub-tree is unbalanced
+
+  // helper function
+  function height(root: TreeNode | null): number {
+    if (root === null) return 0
+
+    // if the left subtree is unbalanced, return -1
+    const left = height(root.left)
+    if (left === -1) return -1
+
+    const right = height(root.right)
+    if (right === -1) return -1
+
+    if (Math.abs(left - right) <= 1) return Math.max(left, right) + 1
+
+    return -1
+  }
+  return height(root) !== -1
 }
 
 
@@ -138,51 +158,3 @@ testBalanced(
   "Complete tree balanced",
 )
 testBalanced([1, 2, 3, 4, 5, 6, null, 8], true, "Almost complete balanced")
-
-//
-
-// function isBalanced(root: TreeNode | null): boolean {
-//   // TODO: Implement the solution
-//   // a tree is balanced if it's right and left sub-trees are balanced
-//   if (root === null) return true
-
-//   function height(node: TreeNode | null): number {
-//     if (node === null) return 0
-
-//     const left = height(node.left)
-//     if (left === -1) return -1
-
-//     const right = height(node.right)
-//     if (right === -1) return -1
-
-//     if (Math.abs(left - right) > 1) return -1
-
-//     return Math.max(left, right) + 1
-//     // height of a tree = height of its tallest subtree + 1
-//     // for the sake of efficiency, we want to add in a simple way to determine if a
-//     // subtree is unbalanced
-
-//     // we'll use -1 as that signal
-
-//     // so first, if the node itself is empty, that means this tree has a height of 0
-
-//     // then we check the height of its subtrees.
-//     // if the height of left is -1, means its unbalanced, therefore the whole tree is
-//     // unbalanced. no need to check further
-//     // same for right
-
-//     // however, if it's a balanced valid number, then we return its height + root node
-//     // ie height(subtree) + 1
-
-//     // if node is empty, return height of 0
-//     // if the tree is unbalanced, return -1
-//     // if the tree is balanced, return the height
-//   }
-
-//   return height(root) !== -1
-
-//   // if height of left is -1, or height of right is -1, return false
-//   // else return left - right > 1
-//   // return false
-
-// }
