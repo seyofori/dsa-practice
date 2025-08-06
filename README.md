@@ -49,6 +49,27 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 - [ ] Valid Palindrome
 - [ ] First Unique Character
 
+**Other:**
+
+- [ ] House Robber
+- [ ] Climbing Stairs
+- [ ] Same Tree
+- [ ] Ransom Note
+- [ ] Majority Element
+- [ ] Intersection of Two Arrays
+- [ ] Intersection of Two Arrays II
+- [ ] Linked List Cycle
+- [ ] Balanced Binary Tree
+- [ ] Merge Two Sorted Lists
+- [ ] Implement Queue Using Stacks
+- [ ] Number of 1 Bits
+- [ ] Remove Duplicates from Sorted Array
+- [ ] Flood Fill
+- [ ] Subtree of Another Tree
+- [ ] Reverse Bits
+- [ ] Max Consecutive Ones
+- [ ] Lowest Common Ancestor of Binary Search Tree
+
 #### **Week 1 Goals:**
 
 - ✅ Complete 15-20 Easy problems
@@ -94,6 +115,22 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 **Binary Search:**
 
 - [ ] Search in Rotated Sorted Array
+
+**Other:**
+
+- [ ] Top K Frequent Elements
+- [ ] Diameter of Binary Tree
+- [ ] Binary Tree Level Order Traversal
+- [ ] Subarray Sum Equals K
+- [ ] Minimum Size Subarray Sum
+- [ ] Character Replacement
+- [ ] Number of Islands
+- [ ] Longest Palindromic Substring
+- [ ] Longest Consecutive Sequence
+- [ ] Clone Graph
+- [ ] Insert Interval
+- [ ] Add Two Numbers
+- [ ] First and Last Position of Element
 
 #### **Week 2 Goals:**
 
@@ -141,6 +178,12 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 **Logic/Simulation:**
 
 - [ ] Game of Life
+
+**Other:**
+
+- [ ] Edit Distance
+- [ ] Longest Arithmetic Sequence with Sum 1
+- [ ] Longest Substring with Max One Repeating
 
 #### **Week 3 Goals:**
 
