@@ -42,16 +42,15 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 **Array Fundamentals:**
 
 - [x] Move Zeroes
-- [ ] Missing Number
+- [x] Missing Number
 
 **String Problems:**
 
-- [ ] Valid Palindrome
-- [ ] First Unique Character
+- [x] Valid Palindrome
+- [x] First Unique Character
 
 **Other:**
 
-- [ ] House Robber
 - [ ] Climbing Stairs
 - [ ] Same Tree
 - [ ] Ransom Note
@@ -119,6 +118,8 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 **Other:**
 
 - [ ] Top K Frequent Elements
+- [ ] Kth Largest Element
+- [ ] House Robber
 - [ ] Diameter of Binary Tree
 - [ ] Binary Tree Level Order Traversal
 - [ ] Subarray Sum Equals K
@@ -170,10 +171,6 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 **Binary Search:**
 
 - [ ] Find Peak Element
-
-**Complex Optimization:**
-
-- [ ] Kth Largest Element
 
 **Logic/Simulation:**
 
@@ -347,4 +344,3 @@ Before your coding assessment, ensure you can:
 ---
 
 **Good luck with your preparation! 🍀 Remember: consistent practice and understanding patterns is more valuable than memorizing solutions.**
-

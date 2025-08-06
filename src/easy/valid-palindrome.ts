@@ -11,6 +11,9 @@ import assertTest from "../assert-test"
  * Time Complexity: O(n)
  * Space Complexity: O(1)
  */
+function isAlphaNumeric(char: string): boolean {
+  return /^[A-Za-z0-9]$/.test(char)
+}
 function isPalindrome(s: string): boolean {
   // TODO: Implement the solution
   return false
@@ -58,4 +61,3 @@ assertTest(isPalindrome("Aa0"), false, "Mixed not palindrome")
 assertTest(isPalindrome("1a2"), false, "Number letter number")
 assertTest(isPalindrome("121"), true, "Simple number palindrome")
 assertTest(isPalindrome("12a21"), true, "Number letter palindrome")
-

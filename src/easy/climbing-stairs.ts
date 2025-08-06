@@ -11,16 +11,7 @@ import assertTest from "../assert-test"
  */
 function climbStairs(n: number): number {
   // TODO: Implement the solution
-  // key to this is recognizing that, to get to the final step, 
-  // you could've either taken 1 step, or two steps
-  // so number of steps that you could've taken to the final step n = (n-1) + (n-2)
-  // that's the fibbonacci sequence
-  // so now we can take advantage of what we know about fibbonacci to solve this
-  
-  if (n === 1) return 1;
-  if (n === 2) return 2;
-
-  return climbStairs(n - 1) + climbStairs(n - 2);
+  return 0
 }
 
 // Test cases
@@ -58,4 +49,3 @@ assertTest(climbStairs(35), 14930352, "Thirty-five steps")
 assertTest(climbStairs(40), 165580141, "Forty steps")
 assertTest(climbStairs(42), 433494437, "Forty-two steps - Answer to everything")
 assertTest(climbStairs(45), 1836311903, "Forty-five steps - Large number")
-

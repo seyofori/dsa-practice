@@ -22,22 +22,6 @@ function moveZeroes(nums: number[]): void {
   // TODO: Implement two-pointer approach
   // Hint: Use one pointer for the position to place non-zero elements
   // and another to iterate through the array
-  let newNumPosition
-
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== 0) continue
-
-    newNumPosition = i
-    let oldNumPosition = i + 1
-    while (oldNumPosition < nums.length && nums[oldNumPosition] === 0) {
-      oldNumPosition++
-    }
-    // so at this point, we have found a valid number
-    if (oldNumPosition < nums.length) {
-      nums[newNumPosition] = nums[oldNumPosition]
-      nums[oldNumPosition] = 0
-    }
-  }
 }
 
 // Helper function to test in-place array modifications
@@ -155,4 +139,3 @@ testMoveZeroes(
   [6, 12, 18, 24, 0, 0, 0, 0],
   "Even spacing pattern",
 )
-

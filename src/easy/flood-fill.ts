@@ -22,40 +22,6 @@ function floodFill(
   color: number,
 ): number[][] {
   // TODO: Implement the solution
-  // from the starting point, we want to find the left, right, top and bottom
-  // and determine if they have the same value as the starting point.
-  // for the ones that do, we change their values, and then rinse and repeat
-
-  // edge cases
-  // we have to ensure that we're not out of bounds
-  // we have to ensure that the cell contains the required value
-  if (image[sr][sc] === color) return image
-
-  const oldColor = image[sr][sc]
-
-  flood(sr, sc)
-
-  function flood(row: number, column: number) {
-    if (
-      row < 0 ||
-      column < 0 ||
-      row > image.length - 1 ||
-      column > image[row].length - 1 ||
-      image[row][column] !== oldColor
-    )
-      return
-
-    image[row][column] = color
-
-    // now flood the left, the right, the top and the bottom
-    flood(row, column - 1)
-    // right
-    flood(row, column + 1)
-    // top
-    flood(row - 1, column)
-    // bottom
-    flood(row + 1, column)
-  }
   return image
 }
 

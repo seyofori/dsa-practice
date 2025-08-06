@@ -10,12 +10,7 @@ import assertTest from "../assert-test"
  * Space Complexity: O(n)
  */
 function containsDuplicate(nums: number[]): boolean {
-  let seen = new Set<number>()
-
-  for (let num of nums) {
-    if (seen.has(num)) return true
-    seen.add(num)
-  }
+  // TODO: Implement the solution
   return false
 }
 
@@ -124,7 +119,6 @@ assertTest(
   true,
   "Powers of 10 - with duplicate",
 )
-
 
 /**
  * SOLUTION

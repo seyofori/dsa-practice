@@ -28,13 +28,7 @@ class TreeNode {
 
 function invertTree(root: TreeNode | null): TreeNode | null {
   // TODO: Implement the solution
-  if (root === null) return null
-
-  let temp = root.left
-  root.left = invertTree(root.right)
-  root.right = invertTree(temp)
-
-  return root
+  return null
 }
 
 // Helper functions for testing
@@ -241,4 +235,3 @@ assertTest(
   [64, 96, 32, 112, 80, 48, 16, 120, 104, 88, 72, 56, 40, 24, 8],
   "Powers of 8 pattern",
 )
-

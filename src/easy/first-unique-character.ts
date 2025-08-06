@@ -23,21 +23,19 @@ import assertTest from "../assert-test"
  */
 function firstUniqChar(s: string): number {
   // TODO: Implement using frequency count
-  const uniqueChars = new Map<string, number>()
-  const skip = new Set<string>()
+  let seen = new Map<string, number>()
 
-  for (let i = 0; i < s.length; i++) {
-    if (uniqueChars.has(s[i]) || skip.has(s[i])) {
-      skip.add(s[i])
-      uniqueChars.delete(s[i])
-    } else {
-      uniqueChars.set(s[i], i)
-    }
+  for (let i = 0; i < s.length; i++){
+    let prev = seen.get(s[i]) ?? 0
+    seen.set(s[i], prev + 1)
   }
 
-  return uniqueChars.size === 0
-    ? -1
-    : Math.min(...Array.from(uniqueChars.values()))
+  for (let i = 0; i < s.length; i++){
+    let count = seen.get(s[i]);
+    if(count === 1) return i
+  }
+
+  return -1
 }
 
 // Test cases

@@ -25,28 +25,8 @@ class TreeNode {
 
 function isBalanced(root: TreeNode | null): boolean {
   // TODO: Implement the solution
-  // it's balanced if the left sub-tree is balanced, and the right subtree is balanced
-  // need to do it recursively
-  // for optimisation purposes, we also need to include a short-circuit that tells us early when a sub-tree is unbalanced
-
-  // helper function
-  function height(root: TreeNode | null): number {
-    if (root === null) return 0
-
-    // if the left subtree is unbalanced, return -1
-    const left = height(root.left)
-    if (left === -1) return -1
-
-    const right = height(root.right)
-    if (right === -1) return -1
-
-    if (Math.abs(left - right) <= 1) return Math.max(left, right) + 1
-
-    return -1
-  }
-  return height(root) !== -1
+  return false
 }
-
 
 // Helper function to create tree from array
 function arrayToTree(arr: (number | null)[]): TreeNode | null {

@@ -13,7 +13,7 @@ import assertTest from "../assert-test"
 // the key to this is the sum formula. sum(n) = n * (n + 1) / 2
 function missingNumber(nums: number[]): number {
   // TODO: Implement the solution
- return 0
+  return 0
 }
 
 // Test cases
@@ -26,9 +26,9 @@ assertTest(missingNumber([0, 1, 3]), 2, "Missing middle")
 assertTest(missingNumber([1, 2, 3]), 0, "Missing first")
 assertTest(missingNumber([0, 1, 2]), 3, "Missing last")
 assertTest(missingNumber([0, 2, 3, 4]), 1, "Missing second")
-assertTest(missingNumber([1, 3, 4, 5]), 0, "Missing zero again")
+assertTest(missingNumber([1, 2, 3, 4]), 0, "Missing zero again")
 assertTest(missingNumber([0, 1, 2, 3, 5]), 4, "Missing fourth")
-assertTest(missingNumber([2, 3, 4, 5, 6]), 0, "All shifted up")
+assertTest(missingNumber([1, 2, 3, 4, 5]), 0, "All shifted up")
 assertTest(missingNumber([0, 1, 2, 3, 4, 6]), 5, "Missing near end")
 assertTest(missingNumber([1, 2, 3, 4, 5, 6]), 0, "Missing beginning")
 assertTest(missingNumber([0, 1, 2, 3, 4, 5]), 6, "Missing end")
@@ -51,4 +51,3 @@ assertTest(missingNumber([0, 1, 2, 3, 5, 6, 7, 8]), 4, "Large missing fifth")
 assertTest(missingNumber([0, 1, 2, 3, 4, 6, 7, 8]), 5, "Large missing sixth")
 assertTest(missingNumber([0, 1, 2, 3, 4, 5, 7, 8]), 6, "Large missing seventh")
 assertTest(missingNumber([0, 1, 2, 3, 4, 5, 6, 8]), 7, "Large missing eighth")
-

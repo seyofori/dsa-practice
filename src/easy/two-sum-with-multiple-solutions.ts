@@ -9,19 +9,8 @@ import assertTest from "../assert-test"
  * @returns [number, number][]
  */
 function twoSum(nums: number[], target: number): [number, number][] {
-  const seen = new Map<number, number>()
-  const result: [number, number][] = []
-
-  for (let i = 0; i < nums.length; i++) {
-    const diff = target - nums[i]
-    if (seen.has(diff)) {
-      result.push([seen.get(diff)!, i])
-    }
-
-    seen.set(nums[i], i)
-  }
-
-  return result
+  // TODO: Implement the solution
+  return []
 }
 
 // Helper function to sort tuple arrays for comparison
@@ -310,4 +299,3 @@ assertTest(
   ],
   "Two Sum: three pairs sum to 10 (7+3, 1+9, 6+4)",
 )
-
