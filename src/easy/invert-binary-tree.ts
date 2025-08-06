@@ -4,7 +4,11 @@ import assertTest from "../assert-test"
  * Invert Binary Tree (#226)
  *
  * Given the root of a binary tree, invert the tree, and return its root.
- * Inverting means swapping the left and right children of all nodes.
+ * Inverting means swapping the lefassertTest(
+  treeToArray(invertTree(createTree([1, 2, 3, null, 7, null, 4, null, null, null, 8]))),
+  [1, 3, 2, 4, null, 7, null, null, 8, null, null],
+  "Uneven tree",
+) right children of all nodes.
  *
  * Time Complexity: O(n)
  * Space Complexity: O(h) where h is the height of the tree
@@ -24,7 +28,13 @@ class TreeNode {
 
 function invertTree(root: TreeNode | null): TreeNode | null {
   // TODO: Implement the solution
-  return null
+  if (root === null) return null
+
+  let temp = root.left
+  root.left = invertTree(root.right)
+  root.right = invertTree(temp)
+
+  return root
 }
 
 // Helper functions for testing
@@ -145,7 +155,7 @@ assertTest(
 )
 assertTest(
   treeToArray(invertTree(createTree([6, 2, 8, 0, 4, 7, 9, null, null, 3, 5]))),
-  [6, 8, 2, 9, 7, 4, 0, null, null, 5, 3],
+  [6, 8, 2, 9, 7, 4, 0, null, null, null, null, 5, 3],
   "Complex tree",
 )
 assertTest(
@@ -180,7 +190,7 @@ assertTest(
 )
 assertTest(
   treeToArray(invertTree(createTree([1, 2, 3, 4, null, null, 7, 8]))),
-  [1, 3, 2, 7, null, null, 4, null, 8],
+  [1, 3, 2, 7, null, null, 4, null, null, null, 8],
   "Uneven tree",
 )
 assertTest(
@@ -197,7 +207,7 @@ assertTest(
   treeToArray(
     invertTree(createTree([8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 9, 11, 13, 15])),
   ),
-  [8, 12, 4, 15, 13, 11, 9, 7, 5, 3, 1, 14, 10, 6, 2],
+  [8, 12, 4, 14, 10, 6, 2, 15, 13, 11, 9, 7, 5, 3, 1],
   "Large perfect tree",
 )
 assertTest(
@@ -228,7 +238,7 @@ assertTest(
       ]),
     ),
   ),
-  [64, 96, 32, 120, 104, 88, 72, 56, 40, 24, 8, 112, 80, 48, 16],
+  [64, 96, 32, 112, 80, 48, 16, 120, 104, 88, 72, 56, 40, 24, 8],
   "Powers of 8 pattern",
 )
 

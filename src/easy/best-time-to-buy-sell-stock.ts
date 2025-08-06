@@ -14,19 +14,17 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1)
  */
 function maxProfit(price: number[]): number {
-  // we determine the max profit by determining which day is the best day to buy
-  // then we determine which subsequent day gives us the biggest difference in price
-  // we do this sequentially to ensure that each subsequent calculation is for a day that
-  // comes after the previous min price.
+  // we find our initial max profit, (buy price - same sell price)
+  // and then we only update maxProfit if we find a better sell price later on
 
-  let minPrice = Infinity;
-  let maxProfit = 0;
+  let minPrice = Infinity
+  let maxProfit = 0
 
   for (let num of price) {
     minPrice = Math.min(minPrice, num)
     maxProfit = Math.max(maxProfit, num - minPrice)
   }
-  
+
   return maxProfit
 }
 
@@ -72,13 +70,8 @@ assertTest(maxProfit([3, 1, 4, 1, 5]), 4, "Pi sequence")
 // function _maxProfit(prices: number[]): number {
 //   let minPrice = Infinity
 //   let maxProfit = 0
-//   let buyDay = 0
-//   let sellDay = 0
 
 //   for (let i = 0; i < prices.length; i++) {
-//     if (prices[i] < minPrice) {
-//       buyDay = i
-//     }
 
 //     minPrice = Math.min(prices[i], minPrice)
 

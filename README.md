@@ -25,14 +25,14 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 
 **Hash Maps & Sets:**
 
-- [ ] Two Sum
-- [ ] Contains Duplicate
-- [ ] Valid Anagram
+- [x] Two Sum
+- [x] Contains Duplicate
+- [x] Valid Anagram
 
 **Binary Search:**
 
-- [ ] Binary Search
-- [ ] Best Time to Buy/Sell Stock
+- [x] Binary Search
+- [x] Best Time to Buy/Sell Stock
 
 **Tree Basics:**
 

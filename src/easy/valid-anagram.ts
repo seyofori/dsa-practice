@@ -12,7 +12,34 @@ import assertTest from "../assert-test"
  */
 function isAnagram(s: string, t: string): boolean {
   // TODO: Implement the solution
-  return false
+  // we'll do a count-up of the letters in s
+  // then we'll use the letters in t to do a countdown
+  // if at the end of the countdown, there are no letters left in s to count
+  // then we have an anagram
+
+  // if during the countdown, we can't find a given letter in s, then we don't
+  // have an anagram
+
+  if (s.length !== t.length) return false
+
+  let countUp = new Map<string, number>()
+  for (let letter of s) {
+    let currentLetterCount = countUp.get(letter) ?? 0
+    countUp.set(letter, currentLetterCount + 1)
+  }
+
+  for (let letter of t) {
+    if (!countUp.has(letter)) return false
+
+    let currentLetterCount = countUp.get(letter)!
+    if (currentLetterCount === 1) {
+      countUp.delete(letter)
+    } else {
+      countUp.set(letter, currentLetterCount - 1)
+    }
+  }
+  
+  return countUp.size === 0
 }
 
 // Test cases

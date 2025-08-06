@@ -7,19 +7,23 @@ import assertTest from "../assert-test"
  * @param target
  * @returns
  */
-function twoSum(nums: number[], target: number): number[] { 
-  let seen = new Map<number, number>();
+function twoSum(nums: number[], target: number): number[] {
+  // for each number in the array, we want to find whether (target - number) is 
+  // in the list
+  // if it is, we want to find its index and return it
+  // we want to do this in O(n) time. we can use a map to achieve this
+
+  let seen = new Map<number, number>()
 
   for (let i = 0; i < nums.length; i++){
-    const otherNum = target - nums[i];
-    if (seen.has(otherNum)) {
-      return [seen.get(otherNum)!, i];
+    let diff = target - nums[i]
+    if (seen.has(diff)) {
+      return [seen.get(diff)!, i]
     }
-
-    seen.set(nums[i], i);
+    seen.set(nums[i], i)
   }
 
-  return [];
+  return []
 }
 
 //
@@ -74,3 +78,20 @@ assertTest(
   "Two Sum with very large numbers",
 )
 
+/**
+ * function twoSum(nums: number[], target: number): number[] { 
+  let seen = new Map<number, number>();
+
+  for (let i = 0; i < nums.length; i++){
+    const otherNum = target - nums[i];
+    if (seen.has(otherNum)) {
+      return [seen.get(otherNum)!, i];
+    }
+
+    seen.set(nums[i], i);
+  }
+
+  return [];
+}
+
+ */
