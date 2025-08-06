@@ -41,7 +41,7 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 
 **Array Fundamentals:**
 
-- [ ] Move Zeroes
+- [x] Move Zeroes
 - [ ] Missing Number
 
 **String Problems:**

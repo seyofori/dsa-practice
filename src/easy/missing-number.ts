@@ -9,9 +9,11 @@ import assertTest from "../assert-test"
  * Time Complexity: O(n)
  * Space Complexity: O(1)
  */
+
+// the key to this is the sum formula. sum(n) = n * (n + 1) / 2
 function missingNumber(nums: number[]): number {
   // TODO: Implement the solution
-  return 0
+ return 0
 }
 
 // Test cases
