@@ -25,7 +25,9 @@ class TreeNode {
 
 function maxDepth(root: TreeNode | null): number {
   // TODO: Implement the solution
-  return 0
+  if (root === null) return 0
+
+  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1
 }
 
 // Helper function to create test trees
@@ -76,11 +78,7 @@ assertTest(
   3,
   "Perfect binary tree",
 )
-assertTest(
-  maxDepth(createTree([1, 2, null, 3, null, null, null, 4])),
-  4,
-  "Left deep tree",
-)
+assertTest(maxDepth(createTree([1, 2, null, 3, null, 4])), 4, "Left deep tree")
 assertTest(
   maxDepth(createTree([1, null, 2, null, 3, null, 4])),
   4,

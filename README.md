@@ -36,8 +36,8 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 
 **Tree Basics:**
 
-- [ ] Invert Binary Tree
-- [ ] Maximum Depth of Binary Tree
+- [x] Invert Binary Tree
+- [x] Maximum Depth of Binary Tree
 
 **Array Fundamentals:**
 
