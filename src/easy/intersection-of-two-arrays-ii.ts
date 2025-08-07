@@ -11,8 +11,27 @@ import assertTest from "../assert-test"
  * Space Complexity: O(min(n, m))
  */
 function intersect(nums1: number[], nums2: number[]): number[] {
-  // TODO: Implement the solution
-  return []
+  let freq = new Map<number, number>()
+  let results: number[] = []
+
+  for (let num of nums1) {
+    let currFreq = freq.get(num) ?? 0
+    freq.set(num, currFreq + 1)
+  }
+
+  for (let num of nums2) {
+    if (freq.has(num)) {
+      results.push(num)
+      let currFreq = freq.get(num)!
+      if (currFreq === 1) {
+        freq.delete(num)
+      } else {
+        freq.set(num, currFreq - 1)
+      }
+    }
+  }
+
+  return results
 }
 
 // Test cases
@@ -21,7 +40,11 @@ assertTest(
   [2, 2],
   "Basic intersection with duplicates",
 )
-assertTest(intersect([4, 9, 5], [9, 4, 9, 8, 4]), [4, 9], "Multiple elements")
+assertTest(
+  intersect([4, 9, 5], [9, 4, 9, 8, 4]).sort(),
+  [4, 9],
+  "Multiple elements",
+)
 assertTest(intersect([], [1, 2]), [], "Empty first array")
 assertTest(intersect([1, 2], []), [], "Empty second array")
 assertTest(intersect([], []), [], "Both arrays empty")
@@ -100,4 +123,3 @@ assertTest(
   [8, 9],
   "Frequency limited by first array",
 )
-

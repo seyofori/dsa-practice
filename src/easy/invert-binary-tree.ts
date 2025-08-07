@@ -27,8 +27,13 @@ class TreeNode {
 }
 
 function invertTree(root: TreeNode | null): TreeNode | null {
-  // TODO: Implement the solution
-  return null
+  if (root === null) return null
+  
+  let temp = root.left
+  root.left = invertTree(root.right)
+  root.right = invertTree(temp)
+
+  return root
 }
 
 // Helper functions for testing

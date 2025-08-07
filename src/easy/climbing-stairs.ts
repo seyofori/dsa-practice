@@ -10,7 +10,13 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1) with optimized approach
  */
 function climbStairs(n: number): number {
-  // TODO: Implement the solution
+  // the number of possible ways to reach the end (n) =
+  // number of steps to reach (n-1) + number of steps to reach (n - 2)
+  // that's the fibbonacci sequence. so we can use fibbonacci to calculate it
+  if(n === 0) return 0
+  if (n === 1) return 1
+  if (n === 2) return 2
+  return climbStairs(n - 1) + climbStairs(n - 2)
   return 0
 }
 

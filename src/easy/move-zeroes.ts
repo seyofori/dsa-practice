@@ -19,7 +19,21 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1)
  */
 function moveZeroes(nums: number[]): void {
-  // TODO: Implement two-pointer approach
+  let zeroLastLocatedAt
+
+  for (let i = 0; i < nums.length; i++){
+    if (nums[i] === 0) {
+      zeroLastLocatedAt = i
+      let temp = i
+      while (nums[temp] === 0) {
+        temp++
+      }
+      if (temp < nums.length) {
+        nums[zeroLastLocatedAt] = nums[temp]
+        nums[temp] = 0
+      }
+    }
+  }
   // Hint: Use one pointer for the position to place non-zero elements
   // and another to iterate through the array
 }

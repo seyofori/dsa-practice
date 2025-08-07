@@ -25,42 +25,44 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 
 **Hash Maps & Sets:**
 
-- [x] Two Sum
-- [x] Contains Duplicate
-- [x] Valid Anagram
+- [ ] Two Sum
+- [ ] Contains Duplicate
+- [ ] Valid Anagram
 
 **Binary Search:**
 
-- [x] Binary Search
-- [x] Best Time to Buy/Sell Stock
+- [ ] Binary Search
+- [ ] Best Time to Buy/Sell Stock
 
 **Tree Basics:**
 
-- [x] Invert Binary Tree
-- [x] Maximum Depth of Binary Tree
+- [ ] Invert Binary Tree
+- [ ] Maximum Depth of Binary Tree
 
 **Array Fundamentals:**
 
-- [x] Move Zeroes
-- [x] Missing Number
+- [ ] Move Zeroes
+- [ ] Missing Number
 
 **String Problems:**
 
-- [x] Valid Palindrome
-- [x] First Unique Character
+- [ ] Valid Palindrome
+- [ ] First Unique Character
 
 **Other:**
 
-- [ ] Climbing Stairs
-- [ ] Same Tree
-- [ ] Ransom Note
-- [ ] Majority Element
-- [ ] Intersection of Two Arrays
+- [x] Climbing Stairs
+- [x] Same Tree
+- [x] Ransom Note
+- [x] Majority Element
+- [x] Intersection of Two Arrays
 - [ ] Intersection of Two Arrays II
 - [ ] Linked List Cycle
 - [ ] Balanced Binary Tree
 - [ ] Merge Two Sorted Lists
 - [ ] Implement Queue Using Stacks
+
+
 - [ ] Number of 1 Bits
 - [ ] Remove Duplicates from Sorted Array
 - [ ] Flood Fill
@@ -118,6 +120,8 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 **Other:**
 
 - [ ] Top K Frequent Elements
+
+
 - [ ] Kth Largest Element
 - [ ] House Robber
 - [ ] Diameter of Binary Tree
@@ -128,6 +132,8 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 - [ ] Number of Islands
 - [ ] Longest Palindromic Substring
 - [ ] Longest Consecutive Sequence
+
+
 - [ ] Clone Graph
 - [ ] Insert Interval
 - [ ] Add Two Numbers
@@ -179,6 +185,8 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 **Other:**
 
 - [ ] Edit Distance
+
+
 - [ ] Longest Arithmetic Sequence with Sum 1
 - [ ] Longest Substring with Max One Repeating
 

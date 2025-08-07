@@ -22,17 +22,17 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1) - at most 26 lowercase English letters
  */
 function firstUniqChar(s: string): number {
-  // TODO: Implement using frequency count
-  let seen = new Map<string, number>()
-
-  for (let i = 0; i < s.length; i++){
-    let prev = seen.get(s[i]) ?? 0
-    seen.set(s[i], prev + 1)
+  // first take the frequencies
+  // then find the first char whose frequency is 1
+  let freq = new Map<string, number>()
+  for (let char of s) {
+    let currFreq = freq.get(char) ?? 0
+    freq.set(char, currFreq + 1)
   }
 
-  for (let i = 0; i < s.length; i++){
-    let count = seen.get(s[i]);
-    if(count === 1) return i
+  for (let i = 0; i < s.length; i++) {
+    let currFreq = freq.get(s[i])
+    if(currFreq === 1) return i
   }
 
   return -1

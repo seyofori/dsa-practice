@@ -15,8 +15,24 @@ function isAlphaNumeric(char: string): boolean {
   return /^[A-Za-z0-9]$/.test(char)
 }
 function isPalindrome(s: string): boolean {
-  // TODO: Implement the solution
-  return false
+  let start = 0
+  let end = s.length - 1
+
+  while (start < end) {
+    while (start < end && !isAlphaNumeric(s[start])) {
+      start++
+    }
+    while (start < end && !isAlphaNumeric(s[end])) {
+      end--
+    }
+
+    if (s[start].toLowerCase() !== s[end].toLowerCase()) return false
+
+    start++
+    end--
+  }
+
+  return true
 }
 
 // Test cases

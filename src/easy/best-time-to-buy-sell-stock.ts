@@ -14,18 +14,15 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1)
  */
 function maxProfit(price: number[]): number {
-  // we find our initial max profit, (buy price - same sell price)
-  // and then we only update maxProfit if we find a better sell price later on
-
-  let minPrice = Infinity
-  let maxProfit = 0
+  let lowestPriceSoFar = Infinity
+  let maxProfitSoFar = 0
 
   for (let num of price) {
-    minPrice = Math.min(minPrice, num)
-    maxProfit = Math.max(maxProfit, num - minPrice)
+    lowestPriceSoFar = Math.min(lowestPriceSoFar, num)
+    maxProfitSoFar = Math.max(maxProfitSoFar, num - lowestPriceSoFar)
   }
 
-  return maxProfit
+  return maxProfitSoFar
 }
 
 // Test cases

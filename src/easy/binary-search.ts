@@ -13,23 +13,13 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1)
  */
 function search(nums: number[], target: number): number {
-  // we start from the middle of the sorted array
-  // if the middle is greater than the target value, we shrink the search
-  // area to start from after the middle, because we know that everything up to
-  // the middle is too small
-  // if the middle is less than the target value, we shrink the search
-  // area to start from before the middle, because we know that everything
-  // from the middle onwards is too large
-  // we do this until start <= end. this means we've shrunk the window to the min
-  // possible size, and we've not nfound it. so we return -1
-  // or if we find that middle = target, we can return that too
   let start = 0
   let end = nums.length - 1
 
   while (start <= end) {
     let mid = Math.floor((start + end) / 2)
-    if (target === nums[mid]) return mid
-
+    if (nums[mid] === target) return mid
+    
     if (nums[mid] < target) {
       start = mid + 1
     } else {

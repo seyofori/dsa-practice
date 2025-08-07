@@ -11,8 +11,35 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1) - using Boyer-Moore Voting Algorithm
  */
 function majorityElement(nums: number[]): number {
-  // TODO: Implement the solution
-  return 0
+  // so here's how the algorithm works
+  // we start with a count, and a candidate
+  // then we loop over the numbers
+  // for each number, if we find it, we increase the count
+  // if we meet a different number, we decrease the count
+  // if the count gets to 0, and the number we've met is not the cnadidate
+  // then we replace the candidate
+
+  // by the time we're done, the candidate will be the one whose occurrence
+  // is greater than n/2
+
+  // the key is that the majority number is greater than half. so even if 
+  // every number reduced its count, it would still have +1 in the end, 
+  // whereas every other number would go into the negatives, and be replaced
+  let candidate = 0
+  let count = 0
+
+  for (let n of nums) {
+    if (count === 0) {
+      candidate = n
+    }
+
+    if (candidate === n) {
+      count++
+    } else {
+      count --
+    }
+  }
+  return candidate
 }
 
 // Test cases
@@ -40,7 +67,7 @@ assertTest(
 )
 assertTest(majorityElement([1, 2, 1, 2, 1, 2, 1]), 1, "Minimal majority")
 assertTest(majorityElement([42, 42, 42, 17, 17]), 42, "Answer to everything")
-assertTest(majorityElement([1, 1, 2, 2, 3, 3, 1]), 1, "Mixed with majority")
+assertTest(majorityElement([1, 1, 2, 2, 3, 3, 1, 1, 1]), 1, "Mixed with majority")
 assertTest(majorityElement([5, 5, 5, 5, 4, 4, 4]), 5, "Just over half")
 assertTest(majorityElement([8, 8, 7, 7, 7]), 7, "Close but clear")
 assertTest(majorityElement([1, 1, 1, 1, 1, 2, 2, 2, 2]), 1, "Five vs four")

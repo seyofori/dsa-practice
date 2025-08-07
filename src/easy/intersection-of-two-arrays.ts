@@ -10,8 +10,15 @@ import assertTest from "../assert-test"
  * Space Complexity: O(min(n, m))
  */
 function intersection(nums1: number[], nums2: number[]): number[] {
-  // TODO: Implement the solution
-  return []
+  let set1 = new Set(nums1)
+  let resultSet = new Set<number>()
+
+  for (let num of nums2) {
+    if (set1.has(num)) {
+      resultSet.add(num)
+    }
+  }
+  return Array.from(resultSet)
 }
 
 // Test cases
@@ -47,13 +54,13 @@ assertTest(
   "Multiple occurrences",
 )
 assertTest(
-  intersection([4, 7, 9, 7, 6, 7], [5, 0, 0, 6, 1, 6, 2, 2, 4]),
+  intersection([4, 7, 9, 7, 6, 7], [5, 0, 0, 6, 1, 6, 2, 2, 4]).sort(),
   [4, 6],
   "Complex case",
 )
 assertTest(intersection([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]), [], "Disjoint sets")
 assertTest(
-  intersection([10, 20, 30], [30, 20, 10]),
+  intersection([10, 20, 30], [30, 20, 10]).sort(),
   [10, 20, 30],
   "Reverse order",
 )
@@ -97,7 +104,7 @@ assertTest(
   "Mixed large numbers",
 )
 assertTest(
-  intersection([42, 17, 99, 3], [99, 42]),
+  intersection([42, 17, 99, 3], [99, 42]).sort(),
   [42, 99],
   "Unordered intersection",
 )
@@ -111,4 +118,3 @@ assertTest(
   [14, 28],
   "Multiples of 7",
 )
-

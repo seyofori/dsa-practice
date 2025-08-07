@@ -12,8 +12,10 @@ import assertTest from "../assert-test"
 
 // the key to this is the sum formula. sum(n) = n * (n + 1) / 2
 function missingNumber(nums: number[]): number {
-  // TODO: Implement the solution
-  return 0
+  let expectedSum = (nums.length * (nums.length + 1)) / 2
+  let actualSum = nums.reduce((total, each) => total + each, 0)
+  let remainingNum = expectedSum - actualSum
+  return remainingNum
 }
 
 // Test cases
