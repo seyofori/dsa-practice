@@ -33,9 +33,9 @@ This file contains all coding problems organized in groups of ten for systematic
 
 
 
-14. [ ] Intersection of Two Arrays II
 
-16. [ ] Invert Binary Tree
+
+
 17. [ ] Isomorphic Strings
 18. [ ] Kadane Algorithm
 19. [ ] Linked List Cycle
@@ -165,6 +165,8 @@ DONE 1
 12. [ ] House Robber
 13. [ ] Implement Queue Using Stacks
 15. [ ] Intersection of Two Arrays
+14. [ ] Intersection of Two Arrays II
+16. [ ] Invert Binary Tree
 
 DONE 2
 
