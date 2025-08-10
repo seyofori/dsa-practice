@@ -17,24 +17,24 @@ This file contains all coding problems organized in groups of ten for systematic
 
 ### **Group 1 (Easy 1-10)**
 
-1. [ ] Anagram
-2. [ ] Balanced Binary Tree
-3. [ ] Best Time to Buy Sell Stock
-4. [ ] Binary Search
-5. [ ] Climbing Stairs
-6. [ ] Contains Duplicate
-7. [ ] Design MinStack
-8. [ ] First Bad Version
-9. [ ] First Unique Character
-10. [ ] Flood Fill
+
+
+
+
+
+
+
+
+
+
 
 ### **Group 2 (Easy 11-20)**
 
-11. [ ] Happy Number
-12. [ ] House Robber
-13. [ ] Implement Queue Using Stacks
+
+
+
 14. [ ] Intersection of Two Arrays II
-15. [ ] Intersection of Two Arrays
+
 16. [ ] Invert Binary Tree
 17. [ ] Isomorphic Strings
 18. [ ] Kadane Algorithm
@@ -154,9 +154,24 @@ This file contains all coding problems organized in groups of ten for systematic
 100.  [ ] Palindrome Partitioning II
 
 DONE 1
+1. [x] Anagram
+3. [ ] Best Time to Buy Sell Stock
+4. [ ] Binary Search
+5. [ ] Climbing Stairs
+6. [ ] Contains Duplicate
+7. [ ] Design MinStack
+8. [ ] First Bad Version
+9. [ ] First Unique Character
+12. [ ] House Robber
+13. [ ] Implement Queue Using Stacks
+15. [ ] Intersection of Two Arrays
 
 DONE 2
 
 DONE 3
 
 PENDING
+2. [ ] Balanced Binary Tree
+10. [ ] Flood Fill
+11. [ ] Happy Number
+
