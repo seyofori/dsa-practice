@@ -10,12 +10,9 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1)
  */
 
-// the key to this is the sum formula. sum(n) = n * (n + 1) / 2
 function missingNumber(nums: number[]): number {
-  let expectedSum = (nums.length * (nums.length + 1)) / 2
-  let actualSum = nums.reduce((total, each) => total + each, 0)
-  let remainingNum = expectedSum - actualSum
-  return remainingNum
+  // TODO: Implement missing number using sum formula or XOR
+  return 0
 }
 
 // Test cases
@@ -53,3 +50,4 @@ assertTest(missingNumber([0, 1, 2, 3, 5, 6, 7, 8]), 4, "Large missing fifth")
 assertTest(missingNumber([0, 1, 2, 3, 4, 6, 7, 8]), 5, "Large missing sixth")
 assertTest(missingNumber([0, 1, 2, 3, 4, 5, 7, 8]), 6, "Large missing seventh")
 assertTest(missingNumber([0, 1, 2, 3, 4, 5, 6, 8]), 7, "Large missing eighth")
+

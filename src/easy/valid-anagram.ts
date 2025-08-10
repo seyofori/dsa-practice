@@ -11,27 +11,8 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1) - constant space for character frequency (26 letters)
  */
 function isAnagram(s: string, t: string): boolean {
-  let freq = new Map<string, number>()
-
-  // first, we count up the frequencies of the chars in s
-  for (let char of s) {
-    let currCount = freq.get(char) ?? 0
-    freq.set(char, currCount + 1)
-  }
-
-  for (let char of t) {
-    if (!freq.has(char)) return false
-
-    let currCount = freq.get(char)!
-    if (currCount === 1) {
-      freq.delete(char)
-    } else {
-      freq.set(char, currCount - 1)
-    }
-  }
-
-  return freq.size === 0
-
+  // TODO: Implement anagram checking algorithm
+  return false
 }
 
 // Test cases
@@ -72,3 +53,4 @@ assertTest(
 assertTest(isAnagram("qwertyuiop", "poiuytrewq"), true, "Keyboard row")
 assertTest(isAnagram("binary", "brainy"), true, "Binary brainy")
 assertTest(isAnagram("dormitory", "dirty room"), false, "With space")
+

@@ -13,20 +13,7 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1)
  */
 function search(nums: number[], target: number): number {
-  let start = 0
-  let end = nums.length - 1
-
-  while (start <= end) {
-    let mid = Math.floor((start + end) / 2)
-    if (nums[mid] === target) return mid
-    
-    if (nums[mid] < target) {
-      start = mid + 1
-    } else {
-      end = mid - 1
-    }
-  }
-
+  // TODO: Implement binary search algorithm
   return -1
 }
 
@@ -106,5 +93,4 @@ function _search(nums: number[], target: number): number {
   // go to the center, and confirm whether the number there is less than or greater than
   // if it's less than, we use that center as the start, and
   return -1
-
 }

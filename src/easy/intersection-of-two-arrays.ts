@@ -10,15 +10,8 @@ import assertTest from "../assert-test"
  * Space Complexity: O(min(n, m))
  */
 function intersection(nums1: number[], nums2: number[]): number[] {
-  let set1 = new Set(nums1)
-  let resultSet = new Set<number>()
-
-  for (let num of nums2) {
-    if (set1.has(num)) {
-      resultSet.add(num)
-    }
-  }
-  return Array.from(resultSet)
+  // TODO: Implement intersection of two arrays
+  return []
 }
 
 // Test cases
@@ -118,3 +111,4 @@ assertTest(
   [14, 28],
   "Multiples of 7",
 )
+

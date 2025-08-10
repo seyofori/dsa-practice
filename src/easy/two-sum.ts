@@ -9,19 +9,6 @@ import assertTest from "../assert-test"
  */
 function twoSum(nums: number[], target: number): number[] {
   // TODO: Implement the solution
-  // we store each number we find in a hash map, along with its index
-  // for each number, we find target - number, and check if the diff is already existin gin the hash map
-  // if it is, then we've found the other number that forms the sum. so we can return its index
-
-  let seen = new Map<number, number>()
-
-  for (let i = 0; i < nums.length; i++){
-    let diff = target - nums[i]
-    if (seen.has(diff)) {
-      return [seen.get(diff)!, i]
-    }
-    seen.set(nums[i], i)
-  }
   return []
 }
 
@@ -76,3 +63,4 @@ assertTest(
   [0, 1],
   "Two Sum with very large numbers",
 )
+

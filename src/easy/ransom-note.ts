@@ -11,24 +11,8 @@ import assertTest from "../assert-test"
  * Space Complexity: O(k) where k is the number of unique characters in magazine
  */
 function canConstruct(ransomNote: string, magazine: string): boolean {
-  let freq = new Map<string, number>()
-
-  for (let char of magazine) {
-    let currCount = freq.get(char) ?? 0
-    freq.set(char, currCount + 1)
-  }
-
-  for (let char of ransomNote) {
-    let currCount = freq.get(char)
-    if (currCount === undefined) return false
-    if (currCount === 1) {
-      freq.delete(char)
-    } else {
-      freq.set(char, currCount - 1)
-    }
-    
-  }
-  return true
+  // TODO: Implement ransom note construction check
+  return false
 }
 
 // Test cases

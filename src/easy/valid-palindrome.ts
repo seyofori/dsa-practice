@@ -12,27 +12,13 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1)
  */
 function isAlphaNumeric(char: string): boolean {
-  return /^[A-Za-z0-9]$/.test(char)
+  // TODO: Implement alphanumeric check
+  return false
 }
+
 function isPalindrome(s: string): boolean {
-  let start = 0
-  let end = s.length - 1
-
-  while (start < end) {
-    while (start < end && !isAlphaNumeric(s[start])) {
-      start++
-    }
-    while (start < end && !isAlphaNumeric(s[end])) {
-      end--
-    }
-
-    if (s[start].toLowerCase() !== s[end].toLowerCase()) return false
-
-    start++
-    end--
-  }
-
-  return true
+  // TODO: Implement palindrome checking with two pointers
+  return false
 }
 
 // Test cases
@@ -77,3 +63,4 @@ assertTest(isPalindrome("Aa0"), false, "Mixed not palindrome")
 assertTest(isPalindrome("1a2"), false, "Number letter number")
 assertTest(isPalindrome("121"), true, "Simple number palindrome")
 assertTest(isPalindrome("12a21"), true, "Number letter palindrome")
+

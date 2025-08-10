@@ -56,12 +56,12 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 - [x] Ransom Note
 - [x] Majority Element
 - [x] Intersection of Two Arrays
-- [ ] Intersection of Two Arrays II
-- [ ] Linked List Cycle
+- [x] Intersection of Two Arrays II
+- [x] Linked List Cycle
+- [ ] Happy Number
 - [ ] Balanced Binary Tree
 - [ ] Merge Two Sorted Lists
 - [ ] Implement Queue Using Stacks
-
 
 - [ ] Number of 1 Bits
 - [ ] Remove Duplicates from Sorted Array
@@ -120,7 +120,9 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 **Other:**
 
 - [ ] Top K Frequent Elements
-
+- [ ] Linked List Cycle II
+- [ ] Find Cycle Length
+- [ ] Remove Cycle
 
 - [ ] Kth Largest Element
 - [ ] House Robber
@@ -132,7 +134,6 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 - [ ] Number of Islands
 - [ ] Longest Palindromic Substring
 - [ ] Longest Consecutive Sequence
-
 
 - [ ] Clone Graph
 - [ ] Insert Interval
@@ -185,7 +186,6 @@ This repository contains **60+ LeetCode challenges** organized for comprehensive
 **Other:**
 
 - [ ] Edit Distance
-
 
 - [ ] Longest Arithmetic Sequence with Sum 1
 - [ ] Longest Substring with Max One Repeating
@@ -352,3 +352,4 @@ Before your coding assessment, ensure you can:
 ---
 
 **Good luck with your preparation! 🍀 Remember: consistent practice and understanding patterns is more valuable than memorizing solutions.**
+

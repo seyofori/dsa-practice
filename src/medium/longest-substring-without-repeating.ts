@@ -1,36 +1,37 @@
-import assertTest from "./assert-test"
+import assertTest from "../assert-test"
 
 /**length of longest substring without repeating */
 
 function lengthOfLongestSubstring(s: string): number {
-
+  // TODO: Implement sliding window approach for longest substring without repeating characters
+  return 0
 }
 
 assertTest(
   lengthOfLongestSubstring("abcabcbb"),
   3,
-  "Longest unique substring basic"
+  "Longest unique substring basic",
 )
 assertTest(
   lengthOfLongestSubstring("bbbb"),
   1,
-  "Longest unique substring all same"
+  "Longest unique substring all same",
 )
 
 assertTest(
   lengthOfLongestSubstring("abcabcbb"),
   3,
-  "Longest unique substring basic"
+  "Longest unique substring basic",
 )
 assertTest(
   lengthOfLongestSubstring("bbbb"),
   1,
-  "Longest unique substring all same"
+  "Longest unique substring all same",
 )
 assertTest(
   lengthOfLongestSubstring("pwwkew"),
   3,
-  "Test with repeating patterns"
+  "Test with repeating patterns",
 )
 assertTest(lengthOfLongestSubstring(""), 0, "Empty string")
 assertTest(lengthOfLongestSubstring(" "), 1, "Single space")

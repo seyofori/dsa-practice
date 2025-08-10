@@ -24,7 +24,7 @@ class ListNode {
 }
 
 function hasCycle(head: ListNode | null): boolean {
-  // TODO: Implement the solution
+  // TODO: Implement cycle detection using Floyd's algorithm (tortoise and hare)
   return false
 }
 

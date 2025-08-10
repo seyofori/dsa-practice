@@ -22,19 +22,7 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1) - at most 26 lowercase English letters
  */
 function firstUniqChar(s: string): number {
-  // first take the frequencies
-  // then find the first char whose frequency is 1
-  let freq = new Map<string, number>()
-  for (let char of s) {
-    let currFreq = freq.get(char) ?? 0
-    freq.set(char, currFreq + 1)
-  }
-
-  for (let i = 0; i < s.length; i++) {
-    let currFreq = freq.get(s[i])
-    if(currFreq === 1) return i
-  }
-
+  // TODO: Implement first unique character using frequency map
   return -1
 }
 

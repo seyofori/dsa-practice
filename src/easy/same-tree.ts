@@ -23,19 +23,8 @@ class TreeNode {
 }
 
 function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
-  // if the roots are not the same, then return false
-  // then compare the subtrees to see if they're the same
-
-  if (p === null && q === null) return true
-  if (p === null || q === null) return false // if we get here
-  // it means that only one of them is null
-
-
-  return (
-    p.val === q.val &&
-    isSameTree(p?.left ?? null, q?.left ?? null) &&
-    isSameTree(p?.right ?? null, q?.right ?? null)
-  )
+  // TODO: Implement recursive comparison of two binary trees
+  return false
 }
 
 // Helper function to create tree from array
@@ -162,3 +151,4 @@ testSameTree(
 )
 testSameTree([1, 2, null, 3], [1, 2, null, 3], true, "Left skewed same")
 testSameTree([8, 4, 12, 2, 6], [8, 4, 12, 2, 6], true, "Another BST same")
+

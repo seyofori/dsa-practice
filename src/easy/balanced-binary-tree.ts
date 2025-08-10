@@ -24,7 +24,7 @@ class TreeNode {
 }
 
 function isBalanced(root: TreeNode | null): boolean {
-  // TODO: Implement the solution
+  // TODO: Implement balanced binary tree check
   return false
 }
 
@@ -138,3 +138,4 @@ testBalanced(
   "Complete tree balanced",
 )
 testBalanced([1, 2, 3, 4, 5, 6, null, 8], true, "Almost complete balanced")
+
