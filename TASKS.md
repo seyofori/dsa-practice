@@ -13,75 +13,19 @@ This file contains all coding problems organized in groups of ten for systematic
 
 ---
 
-## 🟢 **EASY PROBLEMS**
-
-### **Group 1 (Easy 1-10)**
-
-
-
-
-
-
-
-
-
-
-
-
-### **Group 2 (Easy 11-20)**
-
-
-
-
-
-
-
-17. [ ] Isomorphic Strings
-18. [ ] Kadane Algorithm
-19. [ ] Linked List Cycle
-20. [ ] Lowest Common Ancestor of a Binary Search Tree
-
 ### **Group 3 (Easy 21-30)**
 
-21. [ ] Majority Element
-22. [ ] Max Consecutive Ones
-23. [ ] Maximum Depth of Binary Tree
-24. [ ] Merge Sorted Array
-25. [ ] Maximum Subarray
-26. [ ] Merge Two Sorted Lists
-27. [ ] Missing Number
-28. [ ] Move Zeroes
-29. [ ] Number of 1 Bits
-30. [ ] Ransom Note
 
 ### **Group 4 (Easy 31-40)**
 
-31. [ ] Remove Duplicates from Sorted Array
-32. [ ] Reverse Bits
-33. [ ] Same Tree
-34. [ ] Search in Sorted Array
-35. [ ] Subtree of Another Tree
-36. [ ] Two Sum with Multiple Solutions
-37. [ ] Two Sum
-38. [ ] Valid Anagram
-39. [ ] Valid Palindrome
-40. [ ] Reverse Linked List
 
----
 
-## 🟡 **MEDIUM PROBLEMS**
 
-### **Group 5 (Medium 1-10)**
 
-41. [ ] 3Sum
-42. [ ] Add Two Numbers
-43. [ ] Binary Tree Level Order Traversal
-44. [ ] Character Replacement
-45. [ ] Clone Graph
-46. [ ] Container with Most Water
-47. [ ] Course Schedule
-48. [ ] Diameter Binary Tree
-49. [ ] Find Cycle Length
+
+# current
+
+
 50. [ ] Find Peak Element
 
 ### **Group 6 (Medium 11-20)**
@@ -153,7 +97,7 @@ This file contains all coding problems organized in groups of ten for systematic
 99. [ ] Remove Invalid Parentheses
 100.  [ ] Palindrome Partitioning II
 
-DONE 1
+# DONE 1
 1. [x] Anagram
 3. [ ] Best Time to Buy Sell Stock
 4. [ ] Binary Search
@@ -163,17 +107,53 @@ DONE 1
 8. [ ] First Bad Version
 9. [ ] First Unique Character
 12. [ ] House Robber
+
 13. [ ] Implement Queue Using Stacks
 15. [ ] Intersection of Two Arrays
 14. [ ] Intersection of Two Arrays II
 16. [ ] Invert Binary Tree
+17. [ ] Isomorphic Strings
+19. [ ] Linked List Cycle
+20. [ ] Lowest Common Ancestor of a Binary Search Tree
+21. [ ] Majority Element
+22. [ ] Max Consecutive Ones
+23. [ ] Maximum Depth of Binary Tree
 
-DONE 2
+24. [ ] Merge Sorted Array
+25. [ ] Maximum Subarray
+26. [ ] Merge Two Sorted Lists
+27. [ ] Missing Number
+28. [ ] Move Zeroes
+30. [ ] Ransom Note
+33. [ ] Same Tree
+36. [ ] Two Sum with Multiple Solutions
+37. [ ] Two Sum
+38. [ ] Valid Anagram
 
-DONE 3
+39. [ ] Valid Palindrome
+40. [ ] Reverse Linked List
+42. [ ] Add Two Numbers
+43. [ ] Binary Tree Level Order Traversal
+48. [ ] Diameter Binary Tree
+49. [ ] Find Cycle Length
 
-PENDING
+
+# DONE 2
+
+# DONE 3
+
+# PENDING
 2. [ ] Balanced Binary Tree
 10. [ ] Flood Fill
 11. [ ] Happy Number
-
+18. [ ] Kadane Algorithm
+29. [ ] Number of 1 Bits
+32. [ ] Reverse Bits
+31. [ ] Remove Duplicates from Sorted Array
+34. [ ] Search in Sorted Array
+35. [ ] Subtree of Another Tree
+41. [ ] 3Sum
+44. [ ] Character Replacement
+45. [ ] Clone Graph
+46. [ ] Container with Most Water
+47. [ ] Course Schedule
