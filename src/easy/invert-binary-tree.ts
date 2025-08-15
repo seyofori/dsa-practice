@@ -4,11 +4,7 @@ import assertTest from "../assert-test"
  * Invert Binary Tree (#226)
  *
  * Given the root of a binary tree, invert the tree, and return its root.
- * Inverting means swapping the lefassertTest(
-  treeToArray(invertTree(createTree([1, 2, 3, null, 7, null, 4, null, null, null, 8]))),
-  [1, 3, 2, 4, null, 7, null, null, 8, null, null],
-  "Uneven tree",
-) right children of all nodes.
+ * Inverting means swapping the left and right children of all nodes.
  *
  * Time Complexity: O(n)
  * Space Complexity: O(h) where h is the height of the tree
@@ -27,8 +23,13 @@ class TreeNode {
 }
 
 function invertTree(root: TreeNode | null): TreeNode | null {
-  // TODO: Implement binary tree inversion
-  return null
+  if (root === null) return null
+  
+  let temp = root.right
+  root.right = invertTree(root.left)
+  root.left = invertTree(temp)
+  
+  return root
 }
 
 // Helper functions for testing

@@ -19,8 +19,47 @@ import assertTest from "../assert-test"
  */
 
 function searchRange(nums: number[], target: number): number[] {
-  // TODO: Implement using binary search to find first and last positions
-  return [-1, -1]
+  function findFirst(nums: number[], target: number): number {
+    let start = 0
+    let end = nums.length - 1
+    let result = -1
+
+    while (start <= end) {
+      let mid = Math.floor((start + end) / 2)
+      if (nums[mid] === target) {
+        result = mid
+        end = mid - 1
+      } else if (nums[mid] < target) {
+        start = mid + 1
+      } else {
+        end = mid - 1
+      }
+    }
+
+    return result
+  }
+
+  function findLast(nums: number[], target: number): number {
+    let start = 0
+    let end = nums.length - 1
+    let result = -1
+
+    while (start <= end) {
+      let mid = Math.floor((start + end) / 2)
+      if (nums[mid] === target) {
+        result = mid
+        start = mid + 1
+      } else if (nums[mid] < target) {
+        start = mid + 1
+      } else {
+        end = mid - 1
+      }
+    }
+
+    return result
+  }
+
+  return [findFirst(nums, target), findLast(nums, target)]
 }
 
 // Test cases

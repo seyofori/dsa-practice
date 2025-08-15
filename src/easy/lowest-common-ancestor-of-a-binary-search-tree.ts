@@ -28,7 +28,18 @@ function lowestCommonAncestor(
   p: TreeNode | null,
   q: TreeNode | null,
 ): TreeNode | null {
-  // TODO: Implement the solution
+  if (root === null || p === null || q === null) return null
+
+  let currentNode: TreeNode | null = root
+  while (currentNode !== null) {
+    if (p.val > currentNode.val && q.val > currentNode.val) {
+      currentNode = currentNode.right
+    } else if (p.val < currentNode.val && q.val < currentNode.val) {
+      currentNode = currentNode.left
+    } else {
+      return currentNode
+    }
+  }
   return null
 }
 

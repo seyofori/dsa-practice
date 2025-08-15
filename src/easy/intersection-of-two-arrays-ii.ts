@@ -11,8 +11,26 @@ import assertTest from "../assert-test"
  * Space Complexity: O(min(n, m))
  */
 function intersect(nums1: number[], nums2: number[]): number[] {
-  // TODO: Implement intersection with duplicates
-  return []
+  let nums1Freq = new Map<number, number>()
+  let results: number[] = []
+  for (let num of nums1) {
+    let currentCount = nums1Freq.get(num) ?? 0
+    nums1Freq.set(num, currentCount + 1)
+  }
+
+  for (let num of nums2) {
+    if (nums1Freq.has(num)) {
+      let currentCount = nums1Freq.get(num)!
+      results.push(num)
+      if (currentCount === 1) {
+        nums1Freq.delete(num)
+      } else {
+        nums1Freq.set(num, currentCount - 1)
+      }
+    }
+  }
+
+  return results
 }
 
 // Test cases

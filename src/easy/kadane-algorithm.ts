@@ -16,8 +16,16 @@ import assertTest from "../assert-test"
  */
 
 function maxSubArray(nums: number[]): number {
-  // TODO: Implement Kadane's Algorithm for maximum subarray sum
-  return 0
+  let maxSum = nums[0]
+  let currentSum = nums[0] 
+
+  for (let i = 1; i < nums.length; i++) {
+    let num = nums[i]
+    currentSum = Math.max(num, currentSum + num)
+    maxSum = Math.max(currentSum, maxSum)
+  }
+
+  return maxSum
 }
 
 // Test cases

@@ -25,7 +25,11 @@ class TreeNode {
 }
 
 function isSubtree(root: TreeNode | null, subRoot: TreeNode | null): boolean {
-  // TODO: Implement the solution
+  if (subRoot === null) return true
+  if (root === null) return false
+
+  
+
   return false
 }
 

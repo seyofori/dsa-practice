@@ -16,8 +16,19 @@ import assertTest from "../assert-test"
  */
 
 function findMaxConsecutiveOnes(nums: number[]): number {
-  // TODO: Implement max consecutive ones counting
-  return 0
+  let maxOnes = 0
+  let currentOnesCount = 0
+
+  for (let num of nums) {
+    if (num === 1) {
+      currentOnesCount++
+    } else {
+      currentOnesCount = 0
+    }
+    maxOnes = Math.max(maxOnes, currentOnesCount)
+  }
+
+  return maxOnes
 }
 
 // Test cases

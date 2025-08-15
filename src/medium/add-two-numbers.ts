@@ -26,8 +26,27 @@ function addTwoNumbers(
   l1: ListNode | null,
   l2: ListNode | null,
 ): ListNode | null {
-  // TODO: Implement the solution
-  return null
+  // we're doing arithmetic, while moving in lockstep along the lists
+  // we get the digit by working with the current sum always, and including the
+  let dummyNode = new ListNode(0)
+  let tail = dummyNode
+  let carry = 0
+
+  while (l1 !== null || l2 !== null || carry !== 0) {
+    let val1 = l1?.val ?? 0
+    let val2 = l2?.val ?? 0
+    let sum = val1 + val2 + carry
+
+    let digit = sum % 10
+    carry = Math.floor(sum / 10)
+
+    tail.next = new ListNode(digit)
+    tail = tail.next
+
+    l1 = l1?.next ?? null
+    l2 = l2?.next ?? null
+  }
+  return dummyNode.next
 }
 
 // Helper function to create linked list from array

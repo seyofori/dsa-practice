@@ -12,8 +12,33 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1)
  */
 function maxArea(height: number[]): number {
-  // TODO: Implement the solution
-  return 0
+  // for each two points, the area is defined by
+  // width * height
+  // width = end - start
+  // height = min(startHeight, endHeight)
+
+  // so we'll use two pointers, starting from the widest width
+  // whichever side has the lower height, we'll move that side and see if we can do better
+  // all the while, keeping track of the best area we've seen so far
+
+  let maxArea = 0
+  let start = 0
+  let end = height.length - 1
+
+  while (start < end) {
+    let width = end - start
+    let h = Math.min(height[start], height[end])
+    let area = width * h
+    maxArea = Math.max(maxArea, area)
+
+    if (height[start] < height[end]) {
+      start++
+    } else {
+      end--
+    }
+  }
+
+  return maxArea
 }
 
 // Test cases
@@ -38,7 +63,7 @@ assertTest(maxArea([10, 1, 10]), 20, "High edges")
 assertTest(maxArea([1, 10, 1]), 2, "High middle")
 assertTest(
   maxArea([6, 4, 2, 0, 3, 2, 0, 3, 1, 4, 5, 8, 2, 3]),
-  32,
+  66,
   "Long array",
 )
 assertTest(maxArea([100, 1, 100]), 200, "Very high edges")
@@ -47,14 +72,14 @@ assertTest(maxArea([1, 2, 4, 3]), 4, "Small peak")
 assertTest(maxArea([4, 3, 2, 1, 4]), 16, "U-shape")
 assertTest(maxArea([1, 4, 2, 3, 1]), 6, "Mixed heights")
 assertTest(maxArea([7, 1, 2, 3, 9]), 28, "Wide span")
-assertTest(maxArea([2, 6, 1, 4, 5, 2, 7]), 24, "Another complex")
+assertTest(maxArea([2, 6, 1, 4, 5, 2, 7]), 30, "Another complex")
 assertTest(maxArea([15, 3, 12, 1, 18, 4, 9]), 60, "Large numbers")
-assertTest(maxArea([8, 20, 1, 2, 3, 4, 15]), 60, "High start and end")
-assertTest(maxArea([1, 3, 2, 5, 4]), 12, "Small array complex")
+assertTest(maxArea([8, 20, 1, 2, 3, 4, 15]), 75, "High start and end")
+assertTest(maxArea([1, 3, 2, 5, 4]), 9, "Small array complex")
 assertTest(maxArea([42, 1, 42]), 84, "Meaningful numbers")
-assertTest(maxArea([13, 17, 11, 19, 7, 23, 5]), 78, "Random heights")
+assertTest(maxArea([13, 17, 11, 19, 7, 23, 5]), 68, "Random heights")
 assertTest(maxArea([99, 1, 1, 1, 99]), 396, "Extreme edges")
-assertTest(maxArea([21, 35, 14, 28, 7, 42]), 105, "Multiples of 7")
+assertTest(maxArea([21, 35, 14, 28, 7, 42]), 140, "Multiples of 7")
 assertTest(maxArea([64, 32, 16, 8, 4, 2, 1]), 32, "Powers of 2")
 assertTest(maxArea([1, 2, 4, 8, 16, 32, 64]), 32, "Increasing powers")
 

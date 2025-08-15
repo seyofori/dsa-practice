@@ -18,7 +18,20 @@ import assertTest from "../assert-test"
  */
 
 function merge(nums1: number[], m: number, nums2: number[], n: number): void {
-  // TODO: Implement in-place merge using three pointers (backwards)
+  let nums1LargestValPointer = m - 1
+  let nums2LargestValPointer = n - 1
+  let currentPos = nums1.length - 1
+
+  while (nums2LargestValPointer >= 0) {
+    if (nums1[nums1LargestValPointer] > nums2[nums2LargestValPointer]) {
+      nums1[currentPos] = nums1[nums1LargestValPointer]
+      nums1LargestValPointer--
+    } else {
+      nums1[currentPos] = nums2[nums2LargestValPointer]
+      nums2LargestValPointer--
+    }
+    currentPos--
+  }
 }
 
 // Helper function for testing
