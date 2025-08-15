@@ -26,10 +26,9 @@ This file contains all coding problems organized in groups of ten for systematic
 # current
 
 
-52. [ ] Game of Life
-53. [ ] Generate Parentheses
-54. [ ] Group Anagrams
-55. [ ] Implement Trie
+
+
+
 56. [ ] Insert Interval
 57. [ ] Kth Largest Element
 58. [ ] Linked List Cycle II
@@ -133,6 +132,10 @@ This file contains all coding problems organized in groups of ten for systematic
 49. [ ] Find Cycle Length
 50. [ ] Find Peak Element
 51. [ ] First and Last Position of Element
+53. [ ] Generate Parentheses
+54. [ ] Group Anagrams
+
+55. [ ] Implement Trie
 
 
 # DONE 2
@@ -154,3 +157,4 @@ This file contains all coding problems organized in groups of ten for systematic
 45. [ ] Clone Graph
 46. [ ] Container with Most Water
 47. [ ] Course Schedule
+52. [ ] Game of Life
