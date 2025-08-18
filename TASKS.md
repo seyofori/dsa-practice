@@ -26,7 +26,7 @@ This file contains all coding problems organized in groups of ten for systematic
 # current
 
 
-60. [ ] Longest Palindromic Substring
+
 
 ### **Group 7 (Medium 21-30)**
 
@@ -131,6 +131,7 @@ This file contains all coding problems organized in groups of ten for systematic
 55. [ ] Implement Trie
 56. [ ] Insert Interval
 59. [ ] Longest Consecutive Sequence
+60. [ ] Longest Palindromic Substring
 
 # DONE 2
 

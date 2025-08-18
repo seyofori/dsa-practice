@@ -92,20 +92,19 @@ testLongestPalindromeLength("abababa", 7, "Alternating pattern")
 testLongestPalindromeLength("aaaaaa", 6, "All same characters")
 testLongestPalindromeLength("abcddcba", 8, "Symmetric with center")
 testLongestPalindromeLength("12321abcba", 5, "Multiple palindromes")
-testLongestPalindromeLength("raceacar", 7, "Overlapping palindromes")
-testLongestPalindromeLength("abcabcabcabc", 3, "Repeating pattern")
+testLongestPalindromeLength("raceacar", 3, "Overlapping palindromes")
+testLongestPalindromeLength("abcabcabcabc", 1, "Repeating pattern")
 testLongestPalindromeLength(
   "xyzabcddcbaqwerty",
-  7,
+  8,
   "Palindrome in middle of string",
 )
-testLongestPalindromeLength("programming", 4, "Word with double letters")
+testLongestPalindromeLength("programming", 2, "Word with double letters")
 testLongestPalindromeLength("abcdefedcba", 11, "Almost entire string")
 testLongestPalindromeLength("aab", 2, "Simple case with pair")
 testLongestPalindromeLength("aaab", 3, "Three consecutive same")
 testLongestPalindromeLength("baaab", 5, "Surrounded by same")
-testLongestPalindromeLength("cbaabc", 4, "Two pairs separated")
+testLongestPalindromeLength("cbaabc", 6, "Two pairs separated")
 testLongestPalindromeLength("abacdc", 3, "Multiple 3-length palindromes")
 testLongestPalindromeLength("abcdcba", 7, "Perfect symmetry")
-testLongestPalindromeLength("abcddcbaefgfge", 7, "Multiple long palindromes")
-
+testLongestPalindromeLength("abcddcbaefgfge", 8, "Multiple long palindromes")
