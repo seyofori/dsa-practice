@@ -192,7 +192,7 @@ assertTest(
 )
 assertTest(
   sortGroups(groupAnagrams(["anagram", "nagaram", "anagarm"])),
-  [["anagram", "anagarm", "nagaram"]],
+  [["anagarm", "anagram", "nagaram"]],
   "Anagram variations",
 )
 
