@@ -13,24 +13,10 @@ This file contains all coding problems organized in groups of ten for systematic
 
 ---
 
-### **Group 3 (Easy 21-30)**
-
-
-### **Group 4 (Easy 31-40)**
-
-
-
-
-
-
 # current
-
-
-
 
 ### **Group 7 (Medium 21-30)**
 
-61. [ ] Longest Substring Without Repeating Characters
 62. [ ] Longest Substring Without Repeating
 63. [ ] Merge Intervals
 64. [ ] Min Size Subarray Sum
@@ -132,6 +118,8 @@ This file contains all coding problems organized in groups of ten for systematic
 56. [ ] Insert Interval
 59. [ ] Longest Consecutive Sequence
 60. [ ] Longest Palindromic Substring
+61. [ ] Longest Substring Without Repeating Characters
+
 
 # DONE 2
 
