@@ -25,13 +25,6 @@ This file contains all coding problems organized in groups of ten for systematic
 
 # current
 
-
-50. [ ] Find Peak Element
-
-### **Group 6 (Medium 11-20)**
-
-51. [ ] First and Last Position of Element
-52. [ ] Game of Life
 53. [ ] Generate Parentheses
 54. [ ] Group Anagrams
 55. [ ] Implement Trie
@@ -136,6 +129,8 @@ This file contains all coding problems organized in groups of ten for systematic
 43. [ ] Binary Tree Level Order Traversal
 48. [ ] Diameter Binary Tree
 49. [ ] Find Cycle Length
+50. [ ] Find Peak Element
+
 
 
 # DONE 2
@@ -157,3 +152,5 @@ This file contains all coding problems organized in groups of ten for systematic
 45. [ ] Clone Graph
 46. [ ] Container with Most Water
 47. [ ] Course Schedule
+52. [ ] Game of Life
+51. [ ] First and Last Position of Element
