@@ -13,8 +13,31 @@ import assertTest from "../assert-test"
  * Space Complexity: O(V + E)
  */
 function canFinish(numCourses: number, prerequisites: number[][]): boolean {
-  // TODO: Implement the solution
-  return false
+  // I think you can only finish if there's no cycles, ie you don't have
+  // both a is a prerequisite of b and b is a prerequisite of a
+
+  // it's a graph, and we're checkign to confirm that there's no cycles
+  // so first, we build the graph
+  let graph: number[][] = Array.from({ length: numCourses }).fill(
+    [],
+  ) as number[][]
+  let state = Array(numCourses).fill(0) // 0 = not visited, 1 = processing / cycle, 2 = already processed
+  for (let val of prerequisites) {
+    graph[val[1]].push(val[0])
+  }
+
+  // so now we hae the graph. we check for cycles
+  function dfs(course: number) {
+    if (state[course] === 1) return false
+    if (state[course] === 2) return true
+
+    state[course] = 1
+
+    for (let neighbor of graph[course]) {
+      
+    }
+  }
+  return true
 }
 
 // Test cases

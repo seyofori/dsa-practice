@@ -11,8 +11,12 @@ import assertTest from "../assert-test"
  */
 
 function missingNumber(nums: number[]): number {
-  // TODO: Implement missing number using sum formula or XOR
-  return 0
+  // sum formula = n * n + 1 / 2
+  let n = nums.length
+  let expectedSum = (n * (n + 1)) / 2
+  let actualSum = nums.reduce((total, num) => total + num, 0)
+
+  return expectedSum - actualSum
 }
 
 // Test cases

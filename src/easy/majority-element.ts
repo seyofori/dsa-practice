@@ -11,8 +11,24 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1) - using Boyer-Moore Voting Algorithm
  */
 function majorityElement(nums: number[]): number {
-  // TODO: Implement Boyer-Moore Voting Algorithm
-  return 0
+  // the voting algorithm takes advantage of the fact that, the item occurs in the
+  // list more than half the time
+  // so if we put it to a vote, where numbers can cancel each other out
+  // then that number will be the only one that's not cancelled out
+
+  let majority = nums[0]
+  let votes = 0
+  for (let num of nums) {
+    if (votes === 0) {
+      majority = num
+    }
+    if (majority === num) {
+      votes++
+    } else {
+      votes--
+    }
+  }
+  return majority
 }
 
 // Test cases

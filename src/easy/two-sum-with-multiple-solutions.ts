@@ -9,8 +9,22 @@ import assertTest from "../assert-test"
  * @returns [number, number][]
  */
 function twoSum(nums: number[], target: number): [number, number][] {
-  // TODO: Implement the solution
-  return []
+  let results: [number, number][] = []
+  let seen = new Map<number, number[]>()
+
+  for (let i = 0; i < nums.length; i++) {
+    let diff = target - nums[i]
+    if (seen.has(diff)) {
+      seen.get(diff)!.forEach((index) => {
+        results.push([index, i])
+      })
+    }
+    let currentIndicesList = seen.get(nums[i]) ?? []
+    currentIndicesList.push(i)
+    seen.set(nums[i], currentIndicesList)
+  }
+
+  return results
 }
 
 // Helper function to sort tuple arrays for comparison
@@ -100,6 +114,7 @@ assertTest(
   sortTupleArray(twoSum([1, 2, 3, 4, 1, 2], 3)),
   [
     [0, 1],
+    [0, 5],
     [1, 4],
     [4, 5],
   ],
@@ -205,6 +220,7 @@ assertTest(
   sortTupleArray(twoSum([0, 1, 0, 1], 1)),
   [
     [0, 1],
+    [0, 3],
     [1, 2],
     [2, 3],
   ],
@@ -299,3 +315,4 @@ assertTest(
   ],
   "Two Sum: three pairs sum to 10 (7+3, 1+9, 6+4)",
 )
+

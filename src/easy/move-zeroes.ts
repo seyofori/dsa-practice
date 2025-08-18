@@ -19,7 +19,21 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1)
  */
 function moveZeroes(nums: number[]): void {
-  // TODO: Implement move zeroes using two pointers
+  let write = 0
+
+  for (let read = 0; read < nums.length; read++) {
+    if (nums[read] !== 0) {
+      nums[write] = nums[read]
+      write++
+    }
+  }
+
+  // we've now prefilled the front of the list with the valid nums
+  // the rest of the list from nums[write] onwards should be 0
+  while (write < nums.length) {
+    nums[write] = 0
+    write++
+  }
 }
 
 // Helper function to test in-place array modifications

@@ -30,57 +30,52 @@ class ListNode {
 }
 
 function findCycleLength(head: ListNode | null): number {
-  // TODO: Implement the solution
-  if (!head || !head.next) return 0
+  if (head === null || head.next === null) return 0
+  
+  let slow: ListNode | null = head
+  let fast: ListNode | null = head
 
-  let slow = head
-  let fast = head
-
-  // Phase 1: Detect cycle using Floyd's algorithm
   while (fast && fast.next) {
     slow = slow.next!
-    fast = fast.next!.next!
+    fast = fast.next.next
 
-    if (slow === fast) {
-      // Cycle detected, now find the length
-      break
+    if (slow == fast) {
+      break // cycle found
     }
   }
 
-  // No cycle exists
   if (!fast || !fast.next) return 0
-
-  // Phase 2: Find cycle length
-  let current = slow.next
-  let length = 1
-
-  while (current !== slow) {
-    current = current!.next
-    length++
+  
+  // we've detected a cycle. now we count
+  let cycleLength = 1
+  fast = fast.next
+  while (fast != slow) {
+    fast = fast.next!
+    cycleLength++
   }
 
-  return length
+  return cycleLength
 }
 
 // Alternative implementation that finds cycle start first
-function findCycleLengthAlternative(head: ListNode | null): number {
-  if (!head || !head.next) return 0
+// function findCycleLengthAlternative(head: ListNode | null): number {
+//   if (!head || !head.next) return 0
 
-  // First detect if cycle exists and find start
-  const cycleStart = detectCycleStart(head)
-  if (!cycleStart) return 0
+//   // First detect if cycle exists and find start
+//   const cycleStart = detectCycleStart(head)
+//   if (!cycleStart) return 0
 
-  // Count nodes in the cycle
-  let current = cycleStart.next
-  let length = 1
+//   // Count nodes in the cycle
+//   let current = cycleStart.next
+//   let length = 1
 
-  while (current !== cycleStart) {
-    current = current!.next
-    length++
-  }
+//   while (current !== cycleStart) {
+//     current = current!.next
+//     length++
+//   }
 
-  return length
-}
+//   return length
+// }
 
 // Helper function to detect cycle start (from previous problem)
 function detectCycleStart(head: ListNode | null): ListNode | null {
@@ -249,16 +244,16 @@ testCycleLength(
   "10 nodes, cycle length 3",
 )
 
-// Test alternative implementation
-function testAlternativeImplementation() {
-  const head1 = createLinkedListWithCycle([3, 2, 0, -4], 1)
-  const result1 = findCycleLengthAlternative(head1)
-  assertTest(result1, 3, "Alternative implementation - Example 1")
+// // Test alternative implementation
+// function testAlternativeImplementation() {
+//   const head1 = createLinkedListWithCycle([3, 2, 0, -4], 1)
+//   const result1 = findCycleLengthAlternative(head1)
+//   assertTest(result1, 3, "Alternative implementation - Example 1")
 
-  const head2 = createLinkedList([1, 2, 3])
-  const result2 = findCycleLengthAlternative(head2)
-  assertTest(result2, 0, "Alternative implementation - No cycle")
-}
+//   const head2 = createLinkedList([1, 2, 3])
+//   const result2 = findCycleLengthAlternative(head2)
+//   assertTest(result2, 0, "Alternative implementation - No cycle")
+// }
 
-testAlternativeImplementation()
+// testAlternativeImplementation()
 

@@ -17,8 +17,17 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1)
  */
 function removeDuplicates(nums: number[]): number {
-  // TODO: Implement the solution
-  return 0
+  if (nums.length === 0) return 0
+  
+  let nextWrite = 1
+
+  for (let read = 0; read < nums.length; read++) {
+    if (nums[read] !== nums[nextWrite - 1]) {
+      nums[nextWrite] = nums[read]
+      nextWrite++
+    }
+  }
+  return nextWrite
 }
 
 // Test cases with array verification
@@ -136,4 +145,5 @@ testRemoveDuplicates(
   [64, 128, 256],
   "Large powers of 2",
 )
+
 

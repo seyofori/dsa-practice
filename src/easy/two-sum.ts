@@ -8,7 +8,16 @@ import assertTest from "../assert-test"
  * @returns
  */
 function twoSum(nums: number[], target: number): number[] {
-  // TODO: Implement the solution
+  let seen = new Map<number, number>()
+
+  for (let i = 0; i < nums.length; i++) {
+    let diff = target - nums[i]
+    if (seen.has(diff)) {
+      return [seen.get(diff)!, i]
+    }
+    seen.set(nums[i], i)
+  }
+
   return []
 }
 

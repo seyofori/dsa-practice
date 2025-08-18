@@ -23,8 +23,32 @@ class TreeNode {
 }
 
 function levelOrder(root: TreeNode | null): number[][] {
-  // TODO: Implement the solution
-  return []
+  let result: number[][] = []
+
+  if (root === null) return []
+
+  let queue: TreeNode[] = []
+  queue.push(root)
+
+  while (queue.length > 0) {
+    let currentLevelSize = queue.length
+    let currentLevel: number[] = []
+
+    for (let i = 0; i < currentLevelSize; i++) {
+      let node = queue.shift()!
+      currentLevel.push(node.val)
+
+      if (node.left) {
+        queue.push(node.left)
+      }
+      if (node.right) {
+        queue.push(node.right)
+      }
+    }
+    result.push(currentLevel)
+  }
+
+  return result
 }
 
 // Helper function to create test trees

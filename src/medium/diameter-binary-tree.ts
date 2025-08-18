@@ -25,8 +25,21 @@ class TreeNode {
 }
 
 function diameterOfBinaryTree(root: TreeNode | null): number {
-  // TODO: Implement the solution
-  return 0
+  let maxDiameter = 0
+
+  if (root === null) return 0
+
+  function height(node: TreeNode | null): number {
+    if (node === null) return 0
+    let left = height(node.left)
+    let right = height(node.right)
+
+    maxDiameter = Math.max(maxDiameter, left + right)
+    return Math.max(left, right) + 1
+  }
+
+  height(root)
+  return maxDiameter
 }
 
 // Helper function to create test trees
@@ -79,7 +92,7 @@ assertTest(
 )
 assertTest(
   diameterOfBinaryTree(createTree([1, 2, null, 3, null, null, null, 4])),
-  3,
+  2,
   "Left chain",
 )
 assertTest(
@@ -94,17 +107,17 @@ assertTest(
 )
 assertTest(
   diameterOfBinaryTree(createTree([1, 2, 3, null, 4, null, 5])),
-  3,
+  4,
   "Partial tree",
 )
 assertTest(
   diameterOfBinaryTree(createTree([5, 4, 8, 11, null, 13, 4, 7, 2])),
-  4,
+  5,
   "Unbalanced tree",
 )
 assertTest(
   diameterOfBinaryTree(createTree([1, 2, 3, 4, null, null, 5, 6])),
-  4,
+  5,
   "Diameter not through root",
 )
 assertTest(
@@ -119,7 +132,7 @@ assertTest(
 )
 assertTest(
   diameterOfBinaryTree(createTree([3, 1, 4, null, 2])),
-  2,
+  3,
   "Small unbalanced",
 )
 assertTest(
@@ -133,7 +146,7 @@ assertTest(
   diameterOfBinaryTree(
     createTree([1, 2, 3, 4, null, null, 5, 6, null, null, 7]),
   ),
-  5,
+  6,
   "Complex tree",
 )
 assertTest(
@@ -143,7 +156,7 @@ assertTest(
 )
 assertTest(
   diameterOfBinaryTree(createTree([2, 1, 3, null, null, null, 4, null, 5])),
-  3,
+  4,
   "Right branch",
 )
 assertTest(
@@ -157,7 +170,7 @@ assertTest(
   diameterOfBinaryTree(
     createTree([50, 30, 70, 20, 40, 60, 80, 10, 25, 35, 45]),
   ),
-  6,
+  5,
   "Wider BST",
 )
 assertTest(
@@ -186,14 +199,14 @@ assertTest(
 )
 assertTest(
   diameterOfBinaryTree(createTree([16, 8, 24, 4, 12, 20, 28, 2, 6, 10, 14])),
-  6,
+  5,
   "Deep balanced",
 )
 assertTest(
   diameterOfBinaryTree(
     createTree([64, 32, 96, 16, 48, 80, 112, 8, 24, 40, 56, 72, 88, 104, 120]),
   ),
-  8,
+  6,
   "Large perfect tree",
 )
 

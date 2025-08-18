@@ -25,9 +25,26 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1) - limited by character set size
  */
 function isIsomorphic(s: string, t: string): boolean {
-  // TODO: Implement using two hash maps for bidirectional mapping
-  // Hint: Map characters from s to t and from t to s, ensure consistency
-  return false
+  if (s.length !== t.length) return false
+
+  let forwardMap = new Map<string, string>()
+  let backwardMap = new Map<string, string>()
+
+  for (let i = 0; i < s.length; i++) {
+    if (forwardMap.has(s[i]) && forwardMap.get(s[i]) !== t[i]) {
+      return false
+    }
+
+    if (backwardMap.has(t[i]) && backwardMap.get(t[i]) !== s[i]) {
+      return false
+    }
+
+    forwardMap.set(s[i], t[i])
+    backwardMap.set(t[i], s[i])
+  }
+
+
+  return true
 }
 
 // Test cases
@@ -71,12 +88,8 @@ assertTest(
   false,
   "Common words - not isomorphic",
 )
-assertTest(
-  isIsomorphic("listen", "silent"),
-  false,
-  "Anagrams - not necessarily isomorphic",
-)
-assertTest(isIsomorphic("rat", "car"), false, "Different patterns")
+assertTest(isIsomorphic("listen", "silent"), true, "Anagrams - isomorphic")
+assertTest(isIsomorphic("rat", "car"), true, "Different patterns")
 assertTest(isIsomorphic("abcd", "efgh"), true, "Sequential mapping")
 assertTest(isIsomorphic("aabbcc", "xxyyzz"), true, "Pairs mapping")
 assertTest(isIsomorphic("aabbcc", "xyxyxy"), false, "Pairs to alternating")
@@ -88,13 +101,13 @@ assertTest(isIsomorphic("title", "paper"), true, "Reverse of example 3")
 assertTest(isIsomorphic("duck", "pool"), false, "Four letters - not isomorphic")
 assertTest(
   isIsomorphic("book", "deer"),
-  false,
+  true,
   "Double letters different positions",
 )
 assertTest(isIsomorphic("noon", "sees"), true, "Symmetric patterns")
 assertTest(isIsomorphic("radar", "level"), true, "Palindromes")
 assertTest(isIsomorphic("abcde", "fghij"), true, "Five character sequence")
-assertTest(isIsomorphic("abcde", "fghia"), false, "Cycle not complete")
+assertTest(isIsomorphic("abcde", "fghia"), true, "Cycle not complete")
 assertTest(
   isIsomorphic("mississippi", "abcdefgheff"),
   false,
@@ -107,7 +120,7 @@ assertTest(isIsomorphic("stress", "banana"), false, "Different repeat patterns")
 assertTest(
   isIsomorphic("committee", "professor"),
   false,
-  "Different length implications",
+  "Repeated char conflicts",
 )
 assertTest(isIsomorphic("deed", "noon"), true, "Four character palindromes")
 assertTest(isIsomorphic("abccba", "xyzzyx"), true, "Mirror pattern")

@@ -24,8 +24,9 @@ class TreeNode {
 }
 
 function maxDepth(root: TreeNode | null): number {
-  // TODO: Implement maximum depth calculation using recursion or BFS
-  return 0
+  if (root === null) return 0
+  
+  return 1 + Math.max(maxDepth(root.left), maxDepth(root.right))
 }
 
 // Helper function to create test trees

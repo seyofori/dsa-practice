@@ -206,7 +206,8 @@ testInsert(
   [3, 6],
   [
     [1, 2],
-    [3, 8],
+    [3, 6],
+    [7, 8],
   ],
   "Merge with one, overlap next",
 )
@@ -332,7 +333,8 @@ testInsert(
   [2, 4],
   [
     [1, 1],
-    [2, 5],
+    [2, 4],
+    [5, 5],
   ],
   "Merge single points",
 )
