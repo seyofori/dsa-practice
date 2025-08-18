@@ -26,12 +26,6 @@ This file contains all coding problems organized in groups of ten for systematic
 # current
 
 
-
-
-
-
-57. [ ] Kth Largest Element
-58. [ ] Linked List Cycle II
 59. [ ] Longest Consecutive Sequence
 60. [ ] Longest Palindromic Substring
 
@@ -158,3 +152,5 @@ This file contains all coding problems organized in groups of ten for systematic
 46. [ ] Container with Most Water
 47. [ ] Course Schedule
 52. [ ] Game of Life
+57. [ ] Kth Largest Element
+58. [ ] Linked List Cycle II
