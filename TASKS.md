@@ -18,11 +18,10 @@ This file contains all coding problems organized in groups of ten for systematic
 ### **Group 7 (Medium 21-30)**
 
 62. [ ] Longest Substring Without Repeating
-63. [ ] Merge Intervals
-64. [ ] Min Size Subarray Sum
-65. [ ] Number of Islands
-66. [ ] Permutations
-67. [ ] Product of Array Except Self
+
+
+
+
 68. [ ] Subsets
 69. [ ] Remove Cycle
 70. [ ] Rotate Matrix
@@ -119,7 +118,9 @@ This file contains all coding problems organized in groups of ten for systematic
 59. [ ] Longest Consecutive Sequence
 60. [ ] Longest Palindromic Substring
 61. [ ] Longest Substring Without Repeating Characters
-
+64. [ ] Min Size Subarray Sum
+65. [ ] Number of Islands
+67. [ ] Product of Array Except Self
 
 # DONE 2
 
@@ -143,3 +144,5 @@ This file contains all coding problems organized in groups of ten for systematic
 52. [ ] Game of Life
 57. [ ] Kth Largest Element
 58. [ ] Linked List Cycle II
+63. [ ] Merge Intervals
+66. [ ] Permutations
