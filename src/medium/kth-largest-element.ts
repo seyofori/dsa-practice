@@ -11,8 +11,8 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1)
  */
 function findKthLargest(nums: number[], k: number): number {
+  return 0
 }
-
 
 // Test cases
 assertTest(

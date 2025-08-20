@@ -56,7 +56,7 @@ This file contains all coding problems organized in groups of ten for systematic
 100.  [ ] Palindrome Partitioning II
 
 # DONE 1
-1. [x] Anagram
+1. [ ] Anagram
 3. [ ] Best Time to Buy Sell Stock
 4. [ ] Binary Search
 5. [ ] Climbing Stairs
