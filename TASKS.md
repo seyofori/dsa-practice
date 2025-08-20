@@ -14,20 +14,6 @@ This file contains all coding problems organized in groups of ten for systematic
 ---
 
 # current
-
-### **Group 7 (Medium 21-30)**
-
-62. [ ] Longest Substring Without Repeating
-
-
-
-
-68. [ ] Subsets
-69. [ ] Remove Cycle
-70. [ ] Rotate Matrix
-
-### **Group 8 (Medium 31-40)**
-
 71. [ ] Search 2D Matrix
 72. [ ] Search in Rotated Sorted Array
 73. [ ] Subarray Sum Equals K
@@ -121,6 +107,7 @@ This file contains all coding problems organized in groups of ten for systematic
 64. [ ] Min Size Subarray Sum
 65. [ ] Number of Islands
 67. [ ] Product of Array Except Self
+69. [ ] Remove Cycle
 
 # DONE 2
 
@@ -146,3 +133,6 @@ This file contains all coding problems organized in groups of ten for systematic
 58. [ ] Linked List Cycle II
 63. [ ] Merge Intervals
 66. [ ] Permutations
+68. [ ] Subsets
+
+70. [ ] Rotate Matrix

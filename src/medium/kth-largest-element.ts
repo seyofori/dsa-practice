@@ -1,22 +1,18 @@
+import assertTest from "../assert-test"
 
 /**
  * Kth Largest Element in an Array (#215)
  *
  * Given an integer array nums and an integer k, return the kth largest element in the array.
  * Note that it is the kth largest element in the sorted order, not the kth distinct element.
- * Can you solve it without sorting?
+ * You must solve it in O(n) time complexity.
  *
- * Example 1:
- * Input: nums = [3,2,1,5,6,4], k = 2
- * Output: 5
- *
- * Example 2:
- * Input: nums = [3,2,3,1,2,4,5,5,6], k = 4
- * Output: 4
- *
- * Time Complexity: O(n) average case using quickselect, O(n log n) worst case
- * Space Complexity: O(1) for iterative quickselect
+ * Time Complexity: O(n) average, O(n²) worst case (using quickselect)
+ * Space Complexity: O(1)
  */
+function findKthLargest(nums: number[], k: number): number {
+}
+
 
 // Test cases
 assertTest(
@@ -287,25 +283,6 @@ assertTest(
 
 console.log("All Kth Largest Element tests completed!")
 
-
-import assertTest from "../assert-test"
-
-/**
- * Kth Largest Element in an Array (#215)
- *
- * Given an integer array nums and an integer k, return the kth largest element in the array.
- * Note that it is the kth largest element in the sorted order, not the kth distinct element.
- * You must solve it in O(n) time complexity.
- *
- * Time Complexity: O(n) average, O(n²) worst case (using quickselect)
- * Space Complexity: O(1)
- */
-function findKthLargest(nums: number[], k: number): number {
-  // TODO: Implement the solution using quickselect algorithm
-
-  return 0
-}
-
 // Test cases
 assertTest(findKthLargest([3, 2, 1, 5, 6, 4], 2), 5, "Basic case - 2nd largest")
 assertTest(
@@ -404,3 +381,4 @@ assertTest(
   6,
   "Long reverse - 5th largest",
 )
+

@@ -15,13 +15,7 @@ import assertTest from "../assert-test"
  *
  * Time Complexity: O(n) where n is the number of nodes
  * Space Complexity: O(1) using Floyd's Cycle Detection Algorithm
- *
- * Algorithm:
- * 1. Use Floyd's algorithm to detect if cycle exists
- * 2. If cycle found, reset slow pointer to head
- * 3. Move both pointers one step at a time until they meet
- * 4. Meeting point is the start of the cycle
- *
+
  * Mathematical proof:
  * Let L = distance from head to cycle start
  * Let C = cycle length
