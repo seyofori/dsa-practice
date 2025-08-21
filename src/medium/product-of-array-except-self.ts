@@ -89,7 +89,7 @@ assertTest(
 )
 assertTest(
   JSON.stringify(productExceptSelf([-1, -2, 3])),
-  JSON.stringify([6, 3, 2]),
+  JSON.stringify([-6, -3, 2]),
   "Two negatives",
 )
 assertTest(
@@ -149,7 +149,7 @@ assertTest(
 )
 assertTest(
   JSON.stringify(productExceptSelf([-5, -2, 3, 4])),
-  JSON.stringify([24, 60, -40, -30]),
+  JSON.stringify([-24, -60, 40, 30]),
   "Mixed signs",
 )
 assertTest(
@@ -169,7 +169,7 @@ assertTest(
 )
 assertTest(
   JSON.stringify(productExceptSelf([1, 3, 9, 27])),
-  JSON.stringify([243, 81, 27, 9]),
+  JSON.stringify([729, 243, 81, 27]),
   "Powers of 3",
 )
 assertTest(
