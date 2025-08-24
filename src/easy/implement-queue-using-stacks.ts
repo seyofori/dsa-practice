@@ -20,11 +20,12 @@ import assertTest from "../assert-test"
  * Space Complexity: O(n) where n is the number of elements
  */
 class MyQueue {
-  // TODO: Implement the solution
 
   constructor() {}
 
-  push(x: number): void {}
+  push(x: number): void {
+    
+  }
 
   pop(): number {
     return 0
@@ -35,7 +36,7 @@ class MyQueue {
   }
 
   empty(): boolean {
-    return true
+    return false
   }
 }
 

@@ -23,31 +23,18 @@ import assertTest from "../assert-test"
  * Space Complexity: O(n) where n is the number of elements
  */
 class MinStack {
-  // TODO: Implement using two stacks or stack with pairs
-  private minStack: number[] = []
-  private stack: number[] = []
-
   constructor() {}
 
-  push(val: number): void {
-    let min = Math.min(this.minStack[this.minStack.length - 1] || Infinity, val)
-    this.stack.push(val)
-    this.minStack.push(min)
-  }
+  push(val: number): void {}
 
-  pop(): void {
-    this.stack.pop()
-    this.minStack.pop()
-  }
+  pop(): void {}
 
   top(): number {
-    if (this.minStack.length === 0) return Infinity
-    return this.stack[this.stack.length - 1]
+    return 0
   }
 
   getMin(): number {
-    if (this.minStack.length === 0) return Infinity
-    return this.minStack[this.minStack.length - 1]
+    return 0
   }
 }
 

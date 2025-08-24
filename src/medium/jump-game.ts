@@ -18,24 +18,6 @@ import assertTest from "../assert-test"
  */
 
 function canJump(nums: number[]): boolean {
-  // TODO: Implement the solution
-  // Use greedy approach: keep track of the farthest position we can reach
-
-  if (nums.length <= 1) return true
-
-  let maxReach = 0
-
-  for (let i = 0; i < nums.length; i++) {
-    // If current position is beyond what we can reach, return false
-    if (i > maxReach) return false
-
-    // Update the farthest position we can reach
-    maxReach = Math.max(maxReach, i + nums[i])
-
-    // If we can reach or exceed the last index, return true
-    if (maxReach >= nums.length - 1) return true
-  }
-
   return false
 }
 
@@ -62,7 +44,7 @@ assertTest(canJump([1, 1, 1, 1]), true, "Jump game - all ones")
 
 assertTest(canJump([4, 3, 2, 1, 0]), true, "Jump game - decreasing sequence")
 
-assertTest(canJump([1, 0]), false, "Jump game - two elements, cannot reach")
+assertTest(canJump([1, 0]), true, "Jump game - two elements, can reach")
 
 assertTest(canJump([2, 0]), true, "Jump game - can jump over single zero")
 
@@ -114,7 +96,7 @@ assertTest(
   "Jump game - longer reachable array",
 )
 
-assertTest(canJump([1, 1, 1, 0]), false, "Jump game - stuck at last zero")
+assertTest(canJump([1, 1, 1, 0]), true, "Jump game - can reach through ones")
 
 assertTest(
   canJump([3, 2, 1, 0, 4, 1, 1]),
@@ -138,8 +120,8 @@ assertTest(
 
 assertTest(
   canJump([6, 0, 0, 0, 0, 0, 0]),
-  false,
-  "Jump game - one short of reaching end",
+  true,
+  "Jump game - exactly enough to reach end",
 )
 
 assertTest(

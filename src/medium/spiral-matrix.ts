@@ -6,7 +6,9 @@ import assertTest from "../assert-test"
  * Given an m x n matrix, return all elements of the matrix in spiral order.
  *
  * Example:
- * Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+ * Input: matrix = [[1,2,3],
+ *                  [4,5,6],
+ *                  [7,8,9]]
  * Output: [1,2,3,6,9,8,7,4,5]
  *
  * Time Complexity: O(m * n) where m and n are the dimensions of the matrix
@@ -14,49 +16,7 @@ import assertTest from "../assert-test"
  */
 
 function spiralOrder(matrix: number[][]): number[] {
-  // TODO: Implement the solution
-  // Use four boundaries: top, bottom, left, right
-  // Move in spiral order: right -> down -> left -> up
-
-  if (!matrix || matrix.length === 0 || matrix[0].length === 0) return []
-
-  const result: number[] = []
-  let top = 0,
-    bottom = matrix.length - 1
-  let left = 0,
-    right = matrix[0].length - 1
-
-  while (top <= bottom && left <= right) {
-    // Move right along top row
-    for (let col = left; col <= right; col++) {
-      result.push(matrix[top][col])
-    }
-    top++
-
-    // Move down along right column
-    for (let row = top; row <= bottom; row++) {
-      result.push(matrix[row][right])
-    }
-    right--
-
-    // Move left along bottom row (if we still have rows)
-    if (top <= bottom) {
-      for (let col = right; col >= left; col--) {
-        result.push(matrix[bottom][col])
-      }
-      bottom--
-    }
-
-    // Move up along left column (if we still have columns)
-    if (left <= right) {
-      for (let row = bottom; row >= top; row--) {
-        result.push(matrix[row][left])
-      }
-      left++
-    }
-  }
-
-  return result
+  return []
 }
 
 // Test cases

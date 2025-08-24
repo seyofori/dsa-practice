@@ -25,21 +25,7 @@ function isBadVersion(version: number): boolean {
 }
 
 function firstBadVersion(n: number): number {
-  // TODO: Implement the solution
-  // we'll use binary search to find the answer
-
-  let start = 1
-  let end = n
-
-  while (start < end) {
-    let mid = Math.floor((start + end) / 2)
-    if (isBadVersion(mid)) {
-      end = mid
-    } else {
-      start = mid + 1
-    }
-  }
-  return end
+  return 0
 }
 
 // Test cases

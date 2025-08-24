@@ -10,14 +10,6 @@ import assertTest from "../assert-test"
  * Space Complexity: O(n)
  */
 function containsDuplicate(nums: number[]): boolean {
-  // TODO: Implement the solution
-  let seen = new Set<number>()
-
-  for (let num of nums) {
-    if (seen.has(num)) return true
-
-    seen.add(num)
-  }
   return false
 }
 
@@ -141,3 +133,4 @@ assertTest(
 }
 
  */
+

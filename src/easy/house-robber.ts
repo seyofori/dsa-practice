@@ -16,7 +16,6 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1)
  */
 function rob(nums: number[]): number {
-  // TODO: Implement the solution using dynamic programming
   return 0
 }
 

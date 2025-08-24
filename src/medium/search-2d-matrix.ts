@@ -22,10 +22,6 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1)
  */
 function searchMatrix(matrix: number[][], target: number): boolean {
-  // TODO: Implement binary search treating matrix as flattened sorted array
-  // Hint: Convert 2D indices to 1D and vice versa
-  // mid = left + (right - left) / 2
-  // row = mid / cols, col = mid % cols
   return false
 }
 

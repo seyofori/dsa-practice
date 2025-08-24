@@ -10,8 +10,6 @@ import assertTest from "../assert-test"
  * Space Complexity: O(n)
  */
 function topKFrequent(nums: number[], k: number): number[] {
-  // TODO: Implement the solution using heap or bucket sort
-
   return []
 }
 
@@ -43,7 +41,11 @@ assertTest(
   [-1, 2],
   "With negative numbers",
 )
-assertTest(topKFrequent([3, 0, 1, 0], 1), [0], "With zero - most frequent")
+assertTest(
+  sortArray(topKFrequent([3, 0, 1, 0], 1)),
+  [0],
+  "With zero - most frequent",
+)
 assertTest(
   sortArray(topKFrequent([1, 1, 1, 2, 2, 3, 3, 4], 3)),
   [1, 2, 3],
@@ -65,7 +67,7 @@ assertTest(
   [1, 2, 3, 4, 5],
   "All unique - all elements",
 )
-assertTest(topKFrequent([7, 7, 7], 1), [7], "All same elements")
+assertTest(sortArray(topKFrequent([7, 7, 7], 1)), [7], "All same elements")
 assertTest(
   sortArray(topKFrequent([1, 1, 2, 2, 3, 3], 3)),
   [1, 2, 3],
@@ -78,7 +80,7 @@ assertTest(
 )
 assertTest(
   sortArray(topKFrequent([-1, -1, -2, -2, -3], 2)),
-  [-1, -2],
+  [-2, -1],
   "All negative",
 )
 assertTest(
@@ -104,11 +106,15 @@ assertTest(
 )
 assertTest(
   sortArray(topKFrequent([8, 8, 7, 7, 7, 6, 6, 5], 3)),
-  [7, 6, 8],
+  [6, 7, 8],
   "Descending with duplicates",
 )
 assertTest(sortArray(topKFrequent([0, 0, 0, 1, 1, 2], 2)), [0, 1], "With zeros")
-assertTest(topKFrequent([50, 50, 50, 40, 40, 30], 1), [50], "Clear winner")
+assertTest(
+  sortArray(topKFrequent([50, 50, 50, 40, 40, 30], 1)),
+  [50],
+  "Clear winner",
+)
 assertTest(
   sortArray(topKFrequent([11, 22, 33, 11, 22, 44], 2)),
   [11, 22],
@@ -120,7 +126,7 @@ assertTest(
   "Complex frequency pattern",
 )
 assertTest(
-  topKFrequent([99, 99, 88, 77, 66], 1),
+  sortArray(topKFrequent([99, 99, 88, 77, 66], 1)),
   [99],
   "Mixed unique and duplicate",
 )
@@ -131,17 +137,17 @@ assertTest(
 )
 assertTest(
   sortArray(topKFrequent([-5, -10, -5, -15, -10, -5], 2)),
-  [-5, -10],
+  [-10, -5],
   "Negative with clear frequency",
 )
 assertTest(
-  topKFrequent([1000, 2000, 1000, 3000, 1000], 1),
+  sortArray(topKFrequent([1000, 2000, 1000, 3000, 1000], 1)),
   [1000],
   "Large numbers - clear winner",
 )
 assertTest(
   sortArray(topKFrequent([42, 42, 24, 24, 13, 13, 7], 3)),
-  [42, 24, 13],
+  [13, 24, 42],
   "Multiple pairs",
 )
 assertTest(
@@ -149,3 +155,4 @@ assertTest(
   1,
   "All same frequency - return one",
 )
+

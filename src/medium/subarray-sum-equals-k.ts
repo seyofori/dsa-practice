@@ -18,7 +18,6 @@ import assertTest from "../assert-test"
  */
 
 function subarraySum(nums: number[], k: number): number {
-  // TODO: Implement using prefix sum and hash map
   return 0
 }
 
@@ -65,7 +64,7 @@ assertTest(
 
 assertTest(
   subarraySum([1, 0, 1, 0, 1], 1),
-  6,
+  8,
   "Subarray sum K - zeros and ones",
 )
 
@@ -93,13 +92,13 @@ assertTest(subarraySum([10, -5, 5], 10), 2, "Subarray sum K - with negative")
 
 assertTest(
   subarraySum([1, 2, -2, 1], 1),
-  3,
+  4,
   "Subarray sum K - canceling middle",
 )
 
 assertTest(
   subarraySum([0, 1, 0, 1, 0], 1),
-  4,
+  8,
   "Subarray sum K - zeros and ones pattern",
 )
 
@@ -111,13 +110,13 @@ assertTest(
 
 assertTest(
   subarraySum([1, 1, 2, 2, 3, 3], 4),
-  3,
+  2,
   "Subarray sum K - pairs pattern",
 )
 
 assertTest(subarraySum([-1, -2, -3], -3), 2, "Subarray sum K - all negative")
 
-assertTest(subarraySum([5, 0, 5], 5), 3, "Subarray sum K - with zero in middle")
+assertTest(subarraySum([5, 0, 5], 5), 4, "Subarray sum K - with zero in middle")
 
 assertTest(
   subarraySum([1, 2, 1, 3, 2], 4),
@@ -133,13 +132,13 @@ assertTest(
 
 assertTest(
   subarraySum([1, -1, 1, -1, 1], 1),
-  3,
+  6,
   "Subarray sum K - alternating pattern",
 )
 
 assertTest(
   subarraySum([4, 2, 9, 7, 19], 11),
-  2,
+  1,
   "Subarray sum K - various combinations",
 )
 
@@ -151,7 +150,7 @@ assertTest(
 
 assertTest(
   subarraySum([23, 2, 4, 6, 7], 6),
-  1,
+  2,
   "Subarray sum K - single match in middle",
 )
 

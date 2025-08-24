@@ -23,8 +23,6 @@ import assertTest from "../assert-test"
  * Space Complexity: O(L) for recursion depth
  */
 function exist(board: string[][], word: string): boolean {
-  // TODO: Implement using DFS backtracking
-  // Hint: For each cell, try DFS in 4 directions, mark visited, then unmark
   return false
 }
 
@@ -87,7 +85,7 @@ assertTest(exist(board2x2, "ABDC"), true, "2x2 - clockwise path")
 assertTest(exist(board2x2, "ACDB"), true, "2x2 - different path")
 assertTest(exist(board2x2, "AB"), true, "2x2 - horizontal path")
 assertTest(exist(board2x2, "AC"), true, "2x2 - vertical path")
-assertTest(exist(board2x2, "ABCD"), true, "2x2 - L-shaped path")
+assertTest(exist(board2x2, "ABCD"), false, "2x2 - L-shaped path (invalid)")
 assertTest(exist(board2x2, "ABA"), false, "2x2 - requires revisiting")
 
 // Duplicate letters
@@ -114,8 +112,8 @@ const boardNoPath = [
   ["A", "B"],
   ["D", "C"],
 ]
-assertTest(exist(boardNoPath, "ABCD"), false, "No valid path for word")
-assertTest(exist(boardNoPath, "DCBA"), false, "No valid reverse path")
+assertTest(exist(boardNoPath, "ABCD"), true, "Valid path for word")
+assertTest(exist(boardNoPath, "DCBA"), true, "Valid reverse path")
 
 // Complex grid
 const boardComplex = [
@@ -142,7 +140,7 @@ const boardZig = [
 assertTest(exist(boardZig, "ABCFI"), true, "Right then down path")
 assertTest(exist(boardZig, "ADGHI"), true, "Down then right path")
 assertTest(exist(boardZig, "ABEHI"), true, "Diagonal-like path")
-assertTest(exist(boardZig, "ABEFIHGD"), false, "Invalid zigzag")
+assertTest(exist(boardZig, "ABEFIHGD"), true, "Valid zigzag")
 
 // Backtracking required
 const boardBacktrack = [
@@ -151,21 +149,34 @@ const boardBacktrack = [
   ["G", "H", "I"],
 ]
 assertTest(exist(boardBacktrack, "ABCFED"), true, "Requires backtracking")
+assertTest(exist(boardBacktrack, "ABCFEDGH"), true, "Backtrack and continue")
+
+// Large letters/numbers - INVALID TEST CONCEPT
+// const boardLarge = [
+//   ["AA", "BB"],
+//   ["CC", "DD"],
+// ]
+// assertTest(exist(boardLarge, "AABBDD"), true, "Multi-character cells")
+// assertTest(exist(boardLarge, "AABBCC"), false, "Multi-character no path")
+
+// Corrected test: Each cell contains single characters
+const boardLarge = [
+  ["A", "B"],
+  ["C", "D"],
+]
 assertTest(
-  exist(boardBacktrack, "ABCFEDGH"),
+  exist(boardLarge, "ABDC"),
+  true,
+  "Single character cells - valid path",
+)
+assertTest(
+  exist(boardLarge, "ABCD"),
   false,
-  "Backtrack but no continuation",
+  "Single character cells - L-shaped path (invalid)",
 )
 
-// Large letters/numbers
-const boardLarge = [
-  ["AA", "BB"],
-  ["CC", "DD"],
-]
-assertTest(exist(boardLarge, "AABBDD"), true, "Multi-character cells")
-assertTest(exist(boardLarge, "AABBCC"), false, "Multi-character no path")
-
-// Empty word
+// Empty word - Note: This depends on implementation
+// Your current implementation returns true for empty word (i > word.length - 1)
 assertTest(exist([["A"]], ""), true, "Empty word should return true")
 
 // Corners and edges
@@ -174,8 +185,12 @@ const boardCorners = [
   ["D", "E", "F"],
   ["G", "H", "I"],
 ]
-assertTest(exist(boardCorners, "ACIG"), true, "Corner to corner path")
-assertTest(exist(boardCorners, "ABCFIHGD"), false, "Around perimeter invalid")
+assertTest(
+  exist(boardCorners, "ACIG"),
+  false,
+  "Corner to corner path - not adjacent",
+)
+assertTest(exist(boardCorners, "ABCFIHGD"), true, "Around perimeter valid")
 
 // Same start and end letter
 const boardSame = [
@@ -200,7 +215,7 @@ const boardWords = [
   ["A", "R", "S"],
   ["T", "S", "E"],
 ]
-assertTest(exist(boardWords, "CAR"), false, "Word CAR - no valid path")
+assertTest(exist(boardWords, "CAR"), true, "Word CAR - valid path")
 assertTest(exist(boardWords, "CAT"), true, "Word CAT - valid path")
 assertTest(exist(boardWords, "CARS"), true, "Word CARS - valid path")
 
@@ -211,16 +226,16 @@ const boardLong = [
   ["I", "J", "K", "L"],
   ["M", "N", "O", "P"],
 ]
-assertTest(exist(boardLong, "ABCDHLKJIFEM"), true, "Long winding path")
+assertTest(
+  exist(boardLong, "ABCDHLKJIFEM"),
+  false,
+  "Invalid long path (non-adjacent)",
+)
 assertTest(exist(boardLong, "ABCDHGFEIJKLM"), false, "Invalid long path")
 
 // Spiral pattern
-assertTest(
-  exist(boardLong, "ABCDHLPONMIJKGFE"),
-  false,
-  "Spiral pattern invalid",
-)
-assertTest(exist(boardLong, "AFGJONIE"), true, "Valid complex path")
+assertTest(exist(boardLong, "ABCDHLPONMIJKGFE"), true, "Spiral pattern valid")
+assertTest(exist(boardLong, "AFGJONIE"), false, "Invalid complex path")
 
 // Performance test setup (large grid)
 const bigBoard = Array(5)
@@ -230,6 +245,6 @@ const bigBoard = Array(5)
       .fill(null)
       .map((_, j) => String.fromCharCode(65 + i * 5 + j)),
   )
-assertTest(exist(bigBoard, "ABCDEFGHIJ"), true, "Large board - valid path")
+assertTest(exist(bigBoard, "ABCDEFGHIJ"), false, "Large board - invalid path")
 assertTest(exist(bigBoard, "ZYXWVU"), false, "Large board - invalid word")
 

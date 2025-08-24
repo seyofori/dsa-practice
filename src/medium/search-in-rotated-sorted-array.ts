@@ -15,7 +15,6 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1)
  */
 function search(nums: number[], target: number): number {
-  // TODO: Implement the solution using binary search
 
   return -1
 }
@@ -87,3 +86,4 @@ assertTest(
   -1,
   "Large numbers - target not found",
 )
+

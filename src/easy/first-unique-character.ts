@@ -22,7 +22,6 @@ import assertTest from "../assert-test"
  * Space Complexity: O(1) - at most 26 lowercase English letters
  */
 function firstUniqChar(s: string): number {
-  // TODO: Implement first unique character using frequency map
   return -1
 }
 
