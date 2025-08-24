@@ -89,7 +89,9 @@ This file contains all coding problems organized in groups of ten for systematic
 
 # PENDING
 
-I'll need to practice and understand memoisation 2. [ ] Balanced Binary Tree 72. [ ] Search in Rotated Sorted Array
+I'll need to practice and understand memoisation 
+2. [ ] Balanced Binary Tree 
+72. [ ] Search in Rotated Sorted Array
 
 10. [ ] Flood Fill
 11. [ ] Happy Number
