@@ -15,8 +15,6 @@ This file contains all coding problems organized in groups of ten for systematic
 
 # current
 
-79. [ ] Unique Paths
-80. [ ] Set Matrix Zeroes
 
 # DONE 1
 
@@ -70,10 +68,8 @@ This file contains all coding problems organized in groups of ten for systematic
 76. [ ] Validate Binary Search Tree
 77. [ ] Spiral Matrix
 78. [ ] Jump Game
-
-
-
-# DONE 2
+79. [ ] Unique Paths
+80. [ ] Set Matrix Zeroes
 
 1. [ ] Anagram
 2. [ ] Best Time to Buy Sell Stock
@@ -84,6 +80,10 @@ This file contains all coding problems organized in groups of ten for systematic
 7. [ ] First Unique Character
 8. [ ] House Robber
 9. [ ] Implement Queue Using Stacks
+
+
+# DONE 2
+
 
 # DONE 3
 

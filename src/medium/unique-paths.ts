@@ -18,27 +18,7 @@ import assertTest from "../assert-test"
  */
 
 function uniquePaths(m: number, n: number): number {
-  // TODO: Implement the solution
-  // Use dynamic programming: dp[i][j] = dp[i-1][j] + dp[i][j-1]
-  // Can also use mathematical combination: C(m+n-2, m-1)
-
-  // DP approach
-  const dp: number[][] = Array(m)
-    .fill(0)
-    .map(() => Array(n).fill(0))
-
-  // Initialize first row and first column to 1
-  for (let i = 0; i < m; i++) dp[i][0] = 1
-  for (let j = 0; j < n; j++) dp[0][j] = 1
-
-  // Fill the DP table
-  for (let i = 1; i < m; i++) {
-    for (let j = 1; j < n; j++) {
-      dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
-    }
-  }
-
-  return dp[m - 1][n - 1]
+  return 0
 }
 
 // Alternative space-optimized solution
